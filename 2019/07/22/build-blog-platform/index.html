@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo搭建blog记录 | My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建blog记录">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/build-blog-platform/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-22T07:45:12.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo搭建blog记录">
+<meta name="twitter:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
+  
+    <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">My Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-build-blog-platform" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/22/build-blog-platform/" class="article-date">
+  <time datetime="2019-07-22T05:03:52.000Z" itemprop="datePublished">2019-07-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo搭建blog记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。</p>
+<a id="more"></a>
+
+<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><h4 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h4><ol>
+<li><p>官网下载系统对应的node.js安装包（windows64位的msi文件)，按照提示一步步安装。</p>
+</li>
+<li><p>安装完成后再cmd中可以通过<code>node -v</code>和<code>nmp -v</code>分别查看node.js和nmp是否安装成功。</p>
+</li>
+<li><p>如果盘够大，跳到第5步。(windows下)可以设置文件夹node_global和node_cache放置全模块所在路径和缓存路径。运行以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix&quot;node_global目录&quot;</span><br><span class="line">npm config set cache&quot;node_cache目录&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量：<br>系统变量添加 变量名：<code>NODE_PATH</code> 变量值：<code>node_global目录\node_modules</code>；<br>用户变量PATH中将npm路径换成<code>node_global路径</code>以及添加<code>nodejs路径</code>。<br>此时使用npm安装的文件都会放入对应的文件夹。</p>
+</li>
+<li><p>由于国内镜像很慢，所以可以安装淘宝镜像 <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
+</li>
+</ol>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ol>
+<li><p>官网下载安装，安装完成后，会有git.bash、git.gui和git.cmd，个人习惯git.bash，和linux命令完全一致。</p>
+</li>
+<li><p>为防止后续权限不足，更改git.bash权限为管理员</p>
+</li>
+<li><p>配置全局用户名和邮箱（好像可以与github用户名邮箱不同，没有测试过，个人习惯相同）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config global user.name&quot;github name&quot;</span><br><span class="line">git config global user.email&quot;email&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为使用SSH进行push等，需要申请SSH key。查看<code>C:\user\user name\.ssh</code>目录下是否有id_rsa和id_rsa.pub文件，如果有，下一步，如果没有，在当前文件夹下打开git.bash，创建SSH key：<code>ssh-keygen -t rsa C &quot;youremail&quot;</code></p>
+</li>
+<li><p>打开github页面，将id_rsa.pub文件内容复制进<code>settings-&gt;SSH and GPG keys-&gt;New SSH key</code>中添加新的ssh keys。然后就可以本地进行git clone等操作。（会有警告，然后输入yes就可以了）</p>
+</li>
+</ol>
+<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><ol>
+<li><p>使用cnmp安装hexo博客框架。<br>打开git.bash，运行<code>cnpm install -g hexo-cli</code>安装hexo，使用<code>hexo -v</code>验证。</p>
+</li>
+<li><p>在一个文件夹下，使用<code>hexo init</code>初始化框架（管理员权限)。</p>
+</li>
+<li><p><code>hexo g</code>生成静态文件。</p>
+</li>
+<li><p><code>hexo s</code>启动服务，通过本地端口可以查看博客网页。</p>
+</li>
+<li><p><code>hexo n &quot;blog title&quot;</code>新建一个blog，然后编辑该md文件。</p>
+</li>
+</ol>
+<p>更多内容后续研究。。。</p>
+<h2 id="三、部署在git上"><a href="#三、部署在git上" class="headerlink" title="三、部署在git上"></a>三、部署在git上</h2><ol>
+<li>在个人github中新建repo名为<code>githubname.github.io</code>，注意githubname一定要是github的用户名。并复制对应的SSH值。</li>
+<li>在blog文件夹中安装git部署插件：<code>cnpm install --save hexo-deployer-git</code>。</li>
+<li>编辑本地blog文件夹下<code>_config.yml</code>文件中属性值：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: ssh value you coped</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>注意，windows下冒号后有一个空格；也可以使用https访问，但每次都需要输入用户名和密码，比较麻烦。</p>
+<ol start="4">
+<li>在生成静态文件后，使用<code>hexo d</code>进行部署，然后就可以使用<code>githubname.github.io</code>域名来访问个人博客。</li>
+</ol>
+<p><em>根据视频 <a href="https://www.bilibili.com/video/av44544186?from=search&seid=14183335241576131046" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a>  以及 <a href="https://blog.csdn.net/weixin_39345384/article/details/80095883" target="_blank" rel="noopener">Windows下通过GitHub+Hexo搭建个人博客的步骤</a> 学习记录。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjye36kqg0000i8uztoxfcgx3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/22/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 yb_ustc<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
