@@ -5,15 +5,21 @@
   
 
   
-  <title>Archives | My Blog</title>
+  <title>cpp makefile | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="c++中makefile的书写。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cpp makefile">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/cpp-makefile/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="c++中makefile的书写。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/make.jpg">
+<meta property="og:updated_time" content="2019-08-03T10:12:14.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
+<meta name="twitter:title" content="cpp makefile">
+<meta name="twitter:description" content="c++中makefile的书写。">
+<meta name="twitter:image" content="http://yoursite.com/images/make.jpg">
   
     <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -60,116 +66,61 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/03/cpp-makefile/" class="archive-article-date">
-  <time datetime="2019-08-03T09:08:47.000Z" itemprop="datePublished">Aug 3</time>
+        <section id="main"><article id="post-cpp-makefile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/03/cpp-makefile/" class="article-date">
+  <time datetime="2019-08-03T09:08:47.000Z" itemprop="datePublished">2019-08-03</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/03/cpp-makefile/">cpp makefile</a>
+    <h1 class="article-title" itemprop="name">
+      cpp makefile
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/03/linux-cpp/" class="archive-article-date">
-  <time datetime="2019-08-03T05:18:12.000Z" itemprop="datePublished">Aug 3</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/03/linux-cpp/">linux下cpp编译</a>
-    </h1>
-  
+        <p>c++中makefile的书写。</p>
+<a id="more"></a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/03/linux-network-problem/" class="archive-article-date">
-  <time datetime="2019-08-03T02:45:19.000Z" itemprop="datePublished">Aug 3</time>
-</a>
+
+<h3 id="简单makefile文件示例"><a href="#简单makefile文件示例" class="headerlink" title="简单makefile文件示例"></a>简单makefile文件示例</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">helloworld:file1.o file2.o</span></span><br><span class="line">	g++ file1.o file2.o -o helloworld</span><br><span class="line">	</span><br><span class="line"><span class="section">file2.o:file2.cpp</span></span><br><span class="line">	g++ -c file2.cpp -o file2.o</span><br><span class="line">	</span><br><span class="line"><span class="section">file1.o:file1.cpp</span></span><br><span class="line">	g++ -c file1.cpp -o file1.o</span><br><span class="line">	</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.o helloworld</span><br></pre></td></tr></table></figure>
+
+<p>规则：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A: B</span><br><span class="line">	&lt;command&gt;</span><br><span class="line">	&lt;command&gt;</span><br></pre></td></tr></table></figure>
+
+<p>冒号表示依赖关系。写好makefile文件后，之间键入make命令，就会执行内容了。<br><img src="/images/make.jpg" alt="make" title="make"></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/03/linux-network-problem/">linux network problem</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/22/build-blog-platform/" class="archive-article-date">
-  <time datetime="2019-07-22T05:03:52.000Z" itemprop="datePublished">Jul 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/03/cpp-makefile/" data-id="cjyvdbhpj0001cwuzfquzjg9c" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/22/hello-world/" class="archive-article-date">
-  <time datetime="2019-07-22T05:01:04.630Z" itemprop="datePublished">Jul 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/08/03/linux-cpp/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux下cpp编译</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
