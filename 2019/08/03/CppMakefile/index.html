@@ -5,15 +5,21 @@
   
 
   
-  <title>My Blog</title>
+  <title>CppMakefile | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CppMakefile">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/CppMakefile/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/CppMakefile/make.png">
+<meta property="og:updated_time" content="2019-08-03T11:39:58.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
+<meta name="twitter:title" content="CppMakefile">
+<meta name="twitter:description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/03/CppMakefile/make.png">
   
     <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -60,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-CppMakefile" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CppMakefile" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/03/CppMakefile/" class="article-date">
   <time datetime="2019-08-03T11:39:06.000Z" itemprop="datePublished">2019-08-03</time>
@@ -75,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/CppMakefile/">CppMakefile</a>
+    <h1 class="article-title" itemprop="name">
+      CppMakefile
     </h1>
   
 
@@ -110,185 +114,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-linux-cpp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/03/linux-cpp/" class="article-date">
-  <time datetime="2019-08-03T05:18:12.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/linux-cpp/">linux下cpp编译</a>
-    </h1>
+    <a href="/2019/08/03/linux-cpp/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux下cpp编译</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>编译和链接分为四个部分：预处理(processing)、编译(compilation)、汇编(assembly)、链接(linking)</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/03/linux-cpp/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/linux-cpp/" data-id="cjyvgu8or0002x0uz6amiq976" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-linux-network-problem" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/03/linux-network-problem/" class="article-date">
-  <time datetime="2019-08-03T02:45:19.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/linux-network-problem/">linux network problem</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>可以对网络服务进行重启。</p>
-<ul>
-<li>停止： <code>sudo service network-manager stop</code></li>
-<li>备份（可选）：<code>sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak</code></li>
-<li>删除当前状态：<code>sudo rm /var/lib/NetworkManager/NetworkManger.state</code></li>
-<li>重启：<code>suao service network-manager start</code></li>
-</ul>
-<h3 id="CentOs"><a href="#CentOs" class="headerlink" title="CentOs"></a>CentOs</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/linux-network-problem/" data-id="cjyvgu8ov0005x0uzymlj1q64" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-build-blog-platform" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/22/build-blog-platform/" class="article-date">
-  <time datetime="2019-07-22T05:03:52.000Z" itemprop="datePublished">2019-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/07/22/build-blog-platform/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjyvgu8oq0001x0uzxogki00u" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/22/hello-world/" class="article-date">
-  <time datetime="2019-07-22T05:01:04.630Z" itemprop="datePublished">2019-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/22/hello-world/" data-id="cjyvgu8ot0004x0uzq03pxojc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
