@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T07:45:12.174Z">
+<meta property="og:updated_time" content="2019-08-03T11:57:26.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建blog记录">
 <meta name="twitter:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
@@ -140,11 +140,18 @@
 <li>在生成静态文件后，使用<code>hexo d</code>进行部署，然后就可以使用<code>githubname.github.io</code>域名来访问个人博客。</li>
 </ol>
 <p><em>根据视频 <a href="https://www.bilibili.com/video/av44544186?from=search&seid=14183335241576131046" target="_blank" rel="noopener">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a>  以及 <a href="https://blog.csdn.net/weixin_39345384/article/details/80095883" target="_blank" rel="noopener">Windows下通过GitHub+Hexo搭建个人博客的步骤</a> 学习记录。</em></p>
+<p>2019.08.03 add</p>
+<h2 id="添加blog对图片的支持"><a href="#添加blog对图片的支持" class="headerlink" title="添加blog对图片的支持"></a>添加blog对图片的支持</h2><ol>
+<li>更改配置文件<code>_config.yml</code>中<code>post_asset_folder</code>为true。</li>
+<li>在<strong>blog文件夹</strong>下安装图片支持插件<code>npm install hexo-asset-image --save</code>。</li>
+<li>建立新文档xxx，在对应的文件夹中放置图片等文件，然后md文件中通过<code>![](xxx/image.png)</code>方式引入图片。</li>
+<li>hexo clean、hexo g、hexo s即可查看；hexo d即可push入git，网页也能看到图片。</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjyvh0zzn0002awuzxlyl4gzm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjyvm3ttm0002gkuzustnh3gc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,6 +209,10 @@
       <ul>
         
           <li>
+            <a href="/2019/08/03/debug/">debug</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/03/CppMakefile/">CppMakefile</a>
           </li>
         
@@ -215,10 +226,6 @@
         
           <li>
             <a href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/22/hello-world/">Hello World</a>
           </li>
         
       </ul>

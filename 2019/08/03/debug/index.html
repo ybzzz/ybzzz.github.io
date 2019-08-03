@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>debug | My Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="linux下几个调试工具及其使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="debug">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/debug/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="linux下几个调试工具及其使用。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/debug/stracec.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/debug/ps.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/debug/valgrind.png">
+<meta property="og:updated_time" content="2019-08-03T14:08:01.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="debug">
+<meta name="twitter:description" content="linux下几个调试工具及其使用。">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/03/debug/stracec.png">
+  
+    <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">My Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-debug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/03/debug/" class="article-date">
+  <time datetime="2019-08-03T12:37:12.000Z" itemprop="datePublished">2019-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      debug
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linux下几个调试工具及其使用。</p>
+<a id="more"></a>
+
+<h3 id="strace"><a href="#strace" class="headerlink" title="strace"></a>strace</h3><p>跟踪系统调用。用法：<code>strace ./test</code><br>得到的信息中每一行都是一个系统调用，等号左边是系统调用的函数名及其参数，右边是该调用的返回值。<br><code>strace -c ./test</code>统计系统调用，结果如下：<br><img src="/2019/08/03/debug/stracec.png" alt="strace -c"></p>
+<p>其他参数：</p>
+<ul>
+<li><code>-o filename</code>将结果输入到文件中（与<code>2&gt;filename</code>作用一样，其中<code>2&gt;</code>为错误重定向符号，将写入<code>stderr</code>的信息写入<code>filename</code>中）；</li>
+<li><code>-T</code>打印出每个系统调用花费的时间；</li>
+<li><code>-p pid</code>跟踪现有的进程pid；</li>
+</ul>
+<h3 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h3><h4 id="调试c-程序"><a href="#调试c-程序" class="headerlink" title="调试c++程序"></a>调试c++程序</h4><p>gdb是gcc的调试工具，主要用于C和c++这两种语言编写的程序。<br>功能：</p>
+<ul>
+<li>断点</li>
+<li>检查运行状态</li>
+<li>动态改变程序的执行环境</li>
+</ul>
+<p>一些用法：</p>
+<ul>
+<li>编译时加上<code>-g</code>参数：<code>g++ -g hello.cpp -o hello</code>；</li>
+<li>启动gdb：<code>gdb program</code>或者直接打开gdb然后输入<code>file program</code>（file一定要有，加上<code>-q</code>参数可以消除介绍文字）；</li>
+<li><code>list</code>或者<code>l</code>列出程序，一次10行，可以加上参数如<code>list 5 10</code>、<code>list test.c 5 10</code>、<code>list 5</code>、<code>list func</code>；</li>
+<li><code>b 6</code>或者<code>break 6</code>在第6行设置断点，返回断点编号和内存位置；<code>break func</code>给函数func设置断点；<code>info break</code>查看断点信息；以条件表达式设置断点<code>break 7 if n==5</code>；</li>
+<li><code>disable 3</code>使第3个断点失效，<code>enable 3</code>恢复；<code>clear 6</code>删除第6行的断点；<code>delete 6</code>删除第6个断点；</li>
+<li><code>run</code>或者<code>r</code>运行程序；</li>
+<li>continue，程序暂停时继续运行程序的命令；</li>
+<li>print 变量名或表达式，打印该变量或者该表达式的值。whatis 变量名或者表达式，可以显示该变量或表达式的数据类型；</li>
+<li>print 变量=值，这种形式还可以给对应的变量赋值；</li>
+<li>next，继续执行下一条语句；还有一条命令step，与之类似，不同的是，当下一条语句遇到函数调用的时候，next不会跟踪进入函数，而是继续执行下面的语句，而step命令则会跟踪进入函数内部；</li>
+<li>quit 退出调试；kill 结束当前程序的调试，不会跳出gdb。<blockquote>
+<p>以上命令全部可以用第一个字母代替。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="分析coredump文件"><a href="#分析coredump文件" class="headerlink" title="分析coredump文件"></a>分析coredump文件</h3><p>coredump文件时进程终止时的现场数据（内存、CPU寄存器、各种函数调用堆栈信息等）。</p>
+<blockquote>
+<p>gdb还可以分析coredump文件，等涉及到再添加……</p>
+</blockquote>
+<h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>显示系统当前的进程和其他状况。输入<code>q</code>退出。</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>列出当前运行的进程。<br>常用参数如下图：<br><img src="/2019/08/03/debug/ps.png" alt="ps parameter"></p>
+<h3 id="Valgrind"><a href="#Valgrind" class="headerlink" title="Valgrind"></a>Valgrind</h3><p>内存分析工具。由一系列工具组成：<br><img src="/2019/08/03/debug/valgrind.png" alt="Valgrind体系结构图"></p>
+<p>程序内存空间：代码段、初始化数据段、未初始化数据段、堆、栈</p>
+<p>使用memcheck可以检查很多内存问题……</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/03/debug/" data-id="cjyvm3tto0003gkuzs2hgw98y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/03/CppMakefile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CppMakefile</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/03/debug/">debug</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/03/CppMakefile/">CppMakefile</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/03/linux-cpp/">linux下cpp编译</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/03/linux-network-problem/">linux network problem</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 yb_ustc<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
