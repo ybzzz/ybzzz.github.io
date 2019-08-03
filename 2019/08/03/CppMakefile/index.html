@@ -7,18 +7,18 @@
   
   <title>CppMakefile | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
+  <meta name="description" content="linux下c++编程，makefile编写方式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CppMakefile">
 <meta property="og:url" content="http://yoursite.com/2019/08/03/CppMakefile/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
+<meta property="og:description" content="linux下c++编程，makefile编写方式。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/08/03/CppMakefile/make.png">
-<meta property="og:updated_time" content="2019-08-03T11:39:58.995Z">
+<meta property="og:updated_time" content="2019-08-03T11:45:56.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CppMakefile">
-<meta name="twitter:description" content="简单makefile文件示例1234567891011helloworld:file1.o file2.o	g++ file1.o file2.o -o helloworld	file2.o:file2.cpp	g++ -c file2.cpp -o file2.o	file1.o:file1.cpp	g++ -c file1.cpp -o file1.o	clean:	rm -rf *.o he">
+<meta name="twitter:description" content="linux下c++编程，makefile编写方式。">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/03/CppMakefile/make.png">
   
     <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
@@ -88,7 +88,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简单makefile文件示例"><a href="#简单makefile文件示例" class="headerlink" title="简单makefile文件示例"></a>简单makefile文件示例</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">helloworld:file1.o file2.o</span></span><br><span class="line">	g++ file1.o file2.o -o helloworld</span><br><span class="line">	</span><br><span class="line"><span class="section">file2.o:file2.cpp</span></span><br><span class="line">	g++ -c file2.cpp -o file2.o</span><br><span class="line">	</span><br><span class="line"><span class="section">file1.o:file1.cpp</span></span><br><span class="line">	g++ -c file1.cpp -o file1.o</span><br><span class="line">	</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.o helloworld</span><br></pre></td></tr></table></figure>
+        <p>linux下c++编程，makefile编写方式。</p>
+<a id="more"></a>
+
+<h3 id="简单makefile文件示例"><a href="#简单makefile文件示例" class="headerlink" title="简单makefile文件示例"></a>简单makefile文件示例</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">helloworld:file1.o file2.o</span></span><br><span class="line">	g++ file1.o file2.o -o helloworld</span><br><span class="line">	</span><br><span class="line"><span class="section">file2.o:file2.cpp</span></span><br><span class="line">	g++ -c file2.cpp -o file2.o</span><br><span class="line">	</span><br><span class="line"><span class="section">file1.o:file1.cpp</span></span><br><span class="line">	g++ -c file1.cpp -o file1.o</span><br><span class="line">	</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.o helloworld</span><br></pre></td></tr></table></figure>
 
 <p>规则：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A: B</span><br><span class="line">	&lt;command&gt;</span><br><span class="line">	&lt;command&gt;</span><br></pre></td></tr></table></figure>
@@ -108,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CppMakefile/" data-id="cjyvgu8ok0000x0uzsnzbii9r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CppMakefile/" data-id="cjyvh0zzo0003awuzbjfl3h9a" class="article-share-link">Share</a>
       
       
     </footer>
