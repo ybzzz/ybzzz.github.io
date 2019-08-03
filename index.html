@@ -62,92 +62,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-CppMakefile" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/03/CppMakefile/" class="article-date">
-  <time datetime="2019-08-03T10:24:24.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/CppMakefile/">CppMakefile</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-
-
-<h3 id="简单makefile文件示例"><a href="#简单makefile文件示例" class="headerlink" title="简单makefile文件示例"></a>简单makefile文件示例</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">helloworld:file1.o file2.o</span></span><br><span class="line">	g++ file1.o file2.o -o helloworld</span><br><span class="line">	</span><br><span class="line"><span class="section">file2.o:file2.cpp</span></span><br><span class="line">	g++ -c file2.cpp -o file2.o</span><br><span class="line">	</span><br><span class="line"><span class="section">file1.o:file1.cpp</span></span><br><span class="line">	g++ -c file1.cpp -o file1.o</span><br><span class="line">	</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -rf *.o helloworld</span><br></pre></td></tr></table></figure>
-
-<p>规则：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A: B</span><br><span class="line">	&lt;command&gt;</span><br><span class="line">	&lt;command&gt;</span><br></pre></td></tr></table></figure>
-
-<p>冒号表示依赖关系。写好makefile文件后，之间键入make命令，就会执行内容了。<br><img src="/2019/08/03/CppMakefile/make.png" alt="make"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CppMakefile/" data-id="cjyvgl7hc0004d4uzs3ugz6r3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cpp-makefile" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/03/cpp-makefile/" class="article-date">
-  <time datetime="2019-08-03T09:08:47.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/cpp-makefile/">cpp makefile</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>c++中makefile的书写。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/03/cpp-makefile/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/cpp-makefile/" data-id="cjyvgl7hb0003d4uzcp959yoe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-linux-cpp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/03/linux-cpp/" class="article-date">
@@ -179,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/linux-cpp/" data-id="cjyvgl7hd0005d4uzgzqwvxm2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/linux-cpp/" data-id="cjyvgpgdf0002rouzgandyj6i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/linux-network-problem/" data-id="cjyvgl7hd0006d4uzw5kirhy9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/linux-network-problem/" data-id="cjyvgpgdg0003rouz0vc6l0y0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjyvgl7h70001d4uz77hl2wf4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/22/build-blog-platform/" data-id="cjyvgpgd70000rouzx24qsjd8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/22/hello-world/" data-id="cjyvgl7h90002d4uz3lxtyg34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/22/hello-world/" data-id="cjyvgpgdh0004rouz1ejrjwnj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,14 +267,6 @@
       <ul>
         
           <li>
-            <a href="/2019/08/03/CppMakefile/">CppMakefile</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/03/cpp-makefile/">cpp makefile</a>
-          </li>
-        
-          <li>
             <a href="/2019/08/03/linux-cpp/">linux下cpp编译</a>
           </li>
         
@@ -370,6 +276,10 @@
         
           <li>
             <a href="/2019/07/22/build-blog-platform/">Hexo搭建blog记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/22/hello-world/">Hello World</a>
           </li>
         
       </ul>
