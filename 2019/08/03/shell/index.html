@@ -5,19 +5,22 @@
   
 
   
-  <title>linux network problem | My Blog</title>
+  <title>shell脚本学习记录 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Ubuntu可以对网络服务进行重启。  停止： sudo service network-manager stop 备份（可选）：sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak 删除当前状态：sudo rm /var/lib/NetworkMan">
+  <meta name="description" content="学习shell脚本编程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux network problem">
-<meta property="og:url" content="http://yoursite.com/2019/08/03/linux-network-problem/index.html">
+<meta property="og:title" content="shell脚本学习记录">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/shell/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="Ubuntu可以对网络服务进行重启。  停止： sudo service network-manager stop 备份（可选）：sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak 删除当前状态：sudo rm /var/lib/NetworkMan">
+<meta property="og:description" content="学习shell脚本编程。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-03T02:55:04.729Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/shell/firstshell.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/shell/bc.png">
+<meta property="og:updated_time" content="2019-08-04T05:41:52.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux network problem">
-<meta name="twitter:description" content="Ubuntu可以对网络服务进行重启。  停止： sudo service network-manager stop 备份（可选）：sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak 删除当前状态：sudo rm /var/lib/NetworkMan">
+<meta name="twitter:title" content="shell脚本学习记录">
+<meta name="twitter:description" content="学习shell脚本编程。">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/03/shell/firstshell.png">
   
     <link rel="alternate" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -64,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-linux-network-problem" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-shell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/03/linux-network-problem/" class="article-date">
-  <time datetime="2019-08-03T02:45:19.000Z" itemprop="datePublished">2019-08-03</time>
+    <a href="/2019/08/03/shell/" class="article-date">
+  <time datetime="2019-08-03T14:51:53.000Z" itemprop="datePublished">2019-08-03</time>
 </a>
     
   </div>
@@ -78,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      linux network problem
+      shell脚本学习记录
     </h1>
   
 
@@ -86,18 +89,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>可以对网络服务进行重启。</p>
-<ul>
-<li>停止： <code>sudo service network-manager stop</code></li>
-<li>备份（可选）：<code>sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak</code></li>
-<li>删除当前状态：<code>sudo rm /var/lib/NetworkManager/NetworkManger.state</code></li>
-<li>重启：<code>suao service network-manager start</code></li>
+        <p>学习shell脚本编程。</p>
+<a id="more"></a>
+
+
+
+<h3 id="基本脚本"><a href="#基本脚本" class="headerlink" title="基本脚本"></a>基本脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">date</span><br><span class="line">who</span><br></pre></td></tr></table></figure>
+
+<p>以上为一个简单脚本，此时需要添加执行的权限<code>chmod u+x test</code>，然后可以运行<code>./test</code>，得到结果：<br><img src="/2019/08/03/shell/firstshell.png" alt="easy shell"></p>
+<h3 id="基本规则、语法"><a href="#基本规则、语法" class="headerlink" title="基本规则、语法"></a>基本规则、语法</h3><ul>
+<li><p>首行<code>#!/bin/bash</code>声明用的shell；</p>
+</li>
+<li><p>除首行外，使用#注释；</p>
+</li>
+<li><p>echo命令打印文本，注意引号；</p>
+</li>
+<li><p>$加环境变量来使用这些变量（set显示当前环境变量列表）；</p>
+</li>
+<li><p>想显示$符号，加上\；</p>
+</li>
+<li><p>等号赋值=号左右不得有空格；</p>
+</li>
+<li><p>将命令输出赋予变量，可使用<code>testing= `date`</code>（该处是反引号）或者<code>testing=$(date)</code>来获取；</p>
+</li>
+<li><p>重定向&gt; &lt;;</p>
+</li>
+<li><p>管道 | （命令是同时进行，不是依次，中间没有缓冲区，直接将运行数据给另一个命令）；</p>
+</li>
+<li><p>使用<code>expr arg1 + arg2</code>类似进行数学运算，在命令行中对有些符号要加上转义字符\才能工作；</p>
+</li>
+<li><p>在shell脚本中，如<code>var3=$(expr $var2 / $var2)</code>来进行运算；</p>
+</li>
+<li><p>也可使用方括号进行数学运算<code>var4=$[$var3 * ($var2 - $var1)]</code>，这种方式不需要转义符号。（这两种都只支持整数运算）；</p>
+</li>
+<li><p>用内置计算器bc进行计算，<code>scale=4</code>设置小数位数；</p>
+</li>
+<li><p>用bc进行复杂计算，可以使用内联重定向进行多行运算，以下是上述几个方式示例：<br><img src="/2019/08/03/shell/bc.png" alt="几个运算方法示例"></p>
+</li>
+<li><p>使用<code>echo $?</code>查看shell所执行的最后一条命令的退出状态码，范围0~255；</p>
+</li>
 </ul>
-<h3 id="CentOs"><a href="#CentOs" class="headerlink" title="CentOs"></a>CentOs</h3>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/linux-network-problem/" data-id="cjywji2oa0006fguzylp2jypc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/shell/" data-id="cjywji2ob0007fguz4k6vr0at" class="article-share-link">Share</a>
       
       
     </footer>
@@ -106,19 +142,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/03/linux-cpp/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          linux下cpp编译
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/22/build-blog-platform/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/08/03/debug/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo搭建blog记录</div>
+      <div class="article-nav-title">debug</div>
     </a>
   
 </nav>
