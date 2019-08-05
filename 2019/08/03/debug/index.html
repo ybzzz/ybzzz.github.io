@@ -17,7 +17,8 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/03/debug/stracec.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/03/debug/ps.PNG">
 <meta property="og:image" content="http://yoursite.com/2019/08/03/debug/valgrind.PNG">
-<meta property="og:updated_time" content="2019-08-05T03:38:48.347Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/03/debug/ProgramMem.jpg">
+<meta property="og:updated_time" content="2019-08-05T04:36:37.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="debug">
 <meta name="twitter:description" content="linux下几个调试工具及其使用。">
@@ -130,13 +131,16 @@
 <h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>显示系统当前的进程和其他状况。输入<code>q</code>退出。</p>
 <h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>列出当前运行的进程。<br>常用参数如下图：<br><img src="/2019/08/03/debug/ps.PNG" alt="ps parameter"></p>
 <h3 id="Valgrind"><a href="#Valgrind" class="headerlink" title="Valgrind"></a>Valgrind</h3><p>内存分析工具。由一系列工具组成：<br><img src="/2019/08/03/debug/valgrind.PNG" alt="Valgrind体系结构图"></p>
-<p>程序内存空间：代码段、初始化数据段、未初始化数据段、堆、栈</p>
+<p>程序内存空间：代码段、初始化数据段、未初始化数据段、堆、栈，具体如下：<br><img src="/2019/08/03/debug/ProgramMem.jpg" alt="内存中程序各数据分布"></p>
+<ul>
+<li>使用 leak-chech可以检查内存泄漏，想要具体定位在程序哪个位置存在泄漏，编译时加上 -g参数即可。</li>
+</ul>
 <p>使用memcheck可以检查很多内存问题……</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/debug/" data-id="cjyxuib4h0002nwuzljmdztdv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/debug/" data-id="cjyxwkqt0000224uzckoghe6n" class="article-share-link">Share</a>
       
       
     </footer>
