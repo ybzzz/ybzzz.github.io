@@ -1,0 +1,59 @@
+# Header
+menu:
+  Home: /
+  #My Works: /works
+  About: /about
+  #Tags: /tags
+
+rss: /atom.xml
+
+# User Info
+user_name: yb
+user_avatar: https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png
+user_location: Hefei, Anhui, China
+user_description: "wait"
+user_contact: yb15110@gmail.com
+user_introduction: 
+
+github_username: 
+twitter_username: 
+weibo_username:
+zhihu_username: 
+facebook_username:
+linkedin_username:
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# display widgets at the bottom of index pages (pagination == 2)
+#index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# widget behavior
+#archive_type: 'monthly'
+show_count: true
+
+# 评论系统
+# 不要用别人的 uid, 自己去注册一个吧
+use_livere: false
+livere_uid: MTAyMC8yOTE4Ni81NzUz
+
+use_disqus: false
+disqus_url: https://haojen.disqus.com/embed.js
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+#twitter:
+#google_plus:
+#fb_admins:
+#fb_app_id:
+
+# Highlight code
+# do ensure u have closed all the highlight choices in ur root _config.yml
+# currently we provided 6 choices based on highlight script
+# highlight_default, highlight_light, highlight_github, highlight_rainbow, highlight_vs, highlight_atom
+block_highlight: highlight_rainbow
