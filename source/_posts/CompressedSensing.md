@@ -1,6 +1,7 @@
 ---
 title: CompressSensing
 date: 2019-08-25 10:56:12
+mathjax: true
 categories:
 - communication
 tags:
@@ -34,11 +35,11 @@ tags:
 数学表达：
 ![数学表达](CompressedSensing/MathExpression.png)
 观测值y：随机亚采样得到的信号；
-观测矩阵 $$\Phi$$ :即随机亚采样矩阵；
+观测矩阵$\Phi$ :即随机亚采样矩阵；
 信号x：原始信号（不一定稀疏，因此需要稀疏矩阵进行变换）；
-稀疏矩阵$$\Psi$$:稀疏基，将原始信号变换为稀疏信号。
+稀疏矩阵$\Psi$:稀疏基，将原始信号变换为稀疏信号。
 
-CS即在已知$$\Phi$$、$$\Psi$$、y的基础上求解x。
+CS即在已知$\Phi$、$\Psi$、y的基础上求解x。
 
 独立同部分的高斯测量矩阵可以成为普适的压缩感知测量矩阵。
 
