@@ -66,7 +66,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/25/CompressedSensing/RandomSampling.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/25/CompressedSensing/Restore.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/25/CompressedSensing/MathExpression.png">
-<meta property="og:updated_time" content="2019-08-25T04:07:50.714Z">
+<meta property="og:updated_time" content="2019-08-25T04:27:32.873Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CompressSensing">
 <meta name="twitter:description" content="压缩感知简单介绍以及毫米波常用CS算法总结记录。">
@@ -297,7 +297,7 @@
                 
               
 
-              <time title="创建时间：2019-08-25 10:56:12 / 修改时间：12:07:50" itemprop="dateCreated datePublished" datetime="2019-08-25T10:56:12+08:00">2019-08-25</time>
+              <time title="创建时间：2019-08-25 10:56:12 / 修改时间：12:27:32" itemprop="dateCreated datePublished" datetime="2019-08-25T10:56:12+08:00">2019-08-25</time>
             </span>
           
             
@@ -348,8 +348,8 @@
 <li>信号稀疏性（近似满足稀疏性）：对于CS，只要信号在某一个变换域满足近似稀疏特性即可，重建将在稀疏域进行；</li>
 <li>不相关性：观测矩阵和稀疏表示基不相关（与RIP条件等价）。</li>
 </ol>
-<p>数学表达：<br><img src="/2019/08/25/CompressedSensing/MathExpression.png" alt="数学表达"><br>观测值y：随机亚采样得到的信号；<br>观测矩阵 $$\Phi$$ :即随机亚采样矩阵；<br>信号x：原始信号（不一定稀疏，因此需要稀疏矩阵进行变换）；<br>稀疏矩阵$$\Psi$$:稀疏基，将原始信号变换为稀疏信号。</p>
-<p>CS即在已知$$\Phi$$、$$\Psi$$、y的基础上求解x。</p>
+<p>数学表达：<br><img src="/2019/08/25/CompressedSensing/MathExpression.png" alt="数学表达"><br>观测值y：随机亚采样得到的信号；<br>观测矩阵$\Phi$ :即随机亚采样矩阵；<br>信号x：原始信号（不一定稀疏，因此需要稀疏矩阵进行变换）；<br>稀疏矩阵$\Psi$:稀疏基，将原始信号变换为稀疏信号。</p>
+<p>CS即在已知$\Phi$、$\Psi$、y的基础上求解x。</p>
 <p>独立同部分的高斯测量矩阵可以成为普适的压缩感知测量矩阵。</p>
 <p>压缩感知重建方法是一个零范数最小化问题，是一个NP完全问题，往往转换为1范数最小化的求解。</p>
 <h3 id="毫米波中常用压缩感知算法总结"><a href="#毫米波中常用压缩感知算法总结" class="headerlink" title="毫米波中常用压缩感知算法总结"></a>毫米波中常用压缩感知算法总结</h3>
@@ -624,6 +624,57 @@
 
 
 
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   
