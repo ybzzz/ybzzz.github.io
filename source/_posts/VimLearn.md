@@ -1,7 +1,11 @@
 ---
 title: VimLearn
 date: 2019-08-09 15:00:14
+categories:
+- tools
 tags:
+- c++
+- linux
 ---
 
 学习vimtutor记录。
