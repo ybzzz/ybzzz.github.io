@@ -1,5 +1,5 @@
 ---
-title: CompressSensing
+title: Compressed Sensing
 date: 2019-08-25 10:56:12
 mathjax: true
 categories:
@@ -85,6 +85,10 @@ MP算法各列向量并不是正交的，因此迭代之间会产生干扰，算
 5. 子空间追踪算法(SP)
 
 >待更新......
+
+
+## 毫米波通信中压缩感知应用
+
 
 
 
