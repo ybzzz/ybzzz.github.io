@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="Bin&#39;s Blog">
 <meta property="og:description" content="学习shell脚本编程。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/03/shell/shell/firstshell.PNG">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/03/shell/shell/bc.PNG">
+<meta property="og:image" content="https://ybzzz.github.io/.io//firstshell.PNG">
+<meta property="og:image" content="https://ybzzz.github.io/.io//bc.PNG">
 <meta property="article:published_time" content="2019-08-03T14:51:53.000Z">
 <meta property="article:modified_time" content="2022-03-13T15:34:09.676Z">
 <meta property="article:author" content="Yang Bin">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ybzzz.github.io/2019/08/03/shell/shell/firstshell.PNG">
+<meta name="twitter:image" content="https://ybzzz.github.io/.io//firstshell.PNG">
 
 <link rel="canonical" href="https://ybzzz.github.io/2019/08/03/shell/">
 
@@ -237,7 +237,7 @@
 <h3 id="基本脚本">基本脚本</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">date</span><br><span class="line">who</span><br></pre></td></tr></table></figure>
 <p>以上为一个简单脚本，此时需要添加执行的权限<code>chmod u+x test</code>，然后可以运行<code>./test</code>，得到结果：
-<img src="shell/firstshell.PNG" alt="easyshell" /></p>
+<img src="/.io//firstshell.PNG" alt="easyshell"></p>
 <h3 id="基本规则语法">基本规则、语法</h3>
 <ul>
 <li><p>首行<code>#!/bin/bash</code>声明用的shell；</p></li>
@@ -255,7 +255,7 @@
 <li><p>也可使用方括号进行数学运算<code>var4=$[$var3 * ($var2 - $var1)]</code>，这种方式不需要转义符号。（这两种都只支持整数运算）；</p></li>
 <li><p>用内置计算器bc进行计算，<code>scale=4</code>设置小数位数；</p></li>
 <li><p>用bc进行复杂计算，可以使用内联重定向进行多行运算，以下是上述几个方式示例：
-<img src="shell/bc.PNG" alt="几个运算方法示例" /></p></li>
+<img src="/.io//bc.PNG" alt="几个运算方法示例"></p></li>
 <li><p>使用<code>echo $?</code>查看shell所执行的最后一条命令的退出状态码，范围0~255；</p></li>
 </ul>
 

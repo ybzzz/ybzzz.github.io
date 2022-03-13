@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="Bin&#39;s Blog">
 <meta property="og:description" content="压缩感知简单介绍以及毫米波常用CS算法总结记录。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/25/CompressedSensing/CompressedSensing/RandomSampling.png">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/25/CompressedSensing/CompressedSensing/Restore.png">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/25/CompressedSensing/CompressedSensing/MathExpression.png">
+<meta property="og:image" content="https://ybzzz.github.io/.io//RandomSampling.png">
+<meta property="og:image" content="https://ybzzz.github.io/.io//Restore.png">
+<meta property="og:image" content="https://ybzzz.github.io/.io//MathExpression.png">
 <meta property="article:published_time" content="2019-08-25T02:56:12.000Z">
 <meta property="article:modified_time" content="2022-03-13T15:34:09.676Z">
 <meta property="article:author" content="Yang Bin">
 <meta property="article:tag" content="compressed sensing">
 <meta property="article:tag" content="mmwave communication">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ybzzz.github.io/2019/08/25/CompressedSensing/CompressedSensing/RandomSampling.png">
+<meta name="twitter:image" content="https://ybzzz.github.io/.io//RandomSampling.png">
 
 <link rel="canonical" href="https://ybzzz.github.io/2019/08/25/CompressedSensing/">
 
@@ -243,23 +243,20 @@
 Donoho证明了：如果信号是稀疏的，name它可以由远低于采样定理要求的采样点重建恢复。关键在于不等间距采样。</li>
 </ul>
 <p>如下图使用随机亚采样，频谱中会产生大量不相关的干扰值，但由于随机采样使得频谱随机的搬移，频谱泄漏均匀的分布在整个频域，因而泄漏值都比较小，有了恢复的可能。
-<img src="CompressedSensing/RandomSampling.png" alt="随机亚采样" /></p>
+<img src="/.io//RandomSampling.png" alt="随机亚采样"></p>
 <p>恢复：有多种算法，如匹配追踪： + 通过阈值检测出较大的频率值; +
 计算着两个非0值引起的干扰； + 去除计算出的干扰值，迭代计算其他频率值。
-<img src="CompressedSensing/Restore.png" alt="信号恢复" /></p>
+<img src="/.io//Restore.png" alt="信号恢复"></p>
 <h2 id="压缩感知的应用条件">压缩感知的应用条件</h2>
 <ol type="1">
 <li>信号稀疏性（近似满足稀疏性）：对于CS，只要信号在某一个变换域满足近似稀疏特性即可，重建将在稀疏域进行；</li>
 <li>不相关性：观测矩阵和稀疏表示基不相关（与RIP条件等价）。</li>
 </ol>
-<p>数学表达： <img src="CompressedSensing/MathExpression.png"
-alt="数学表达" /> 观测值y：随机亚采样得到的信号；
+<p>数学表达： <img src="/.io//MathExpression.png" alt="数学表达"> 观测值y：随机亚采样得到的信号；
 观测矩阵（测量矩阵）<span class="math inline">\(\Phi\)</span>
 :即随机亚采样矩阵；
-信号x：原始信号（不一定稀疏，因此需要稀疏矩阵进行变换）； 稀疏矩阵<span
-class="math inline">\(\Psi\)</span>:稀疏基，将原始信号变换为稀疏信号s。</p>
-<p>CS即在已知<span class="math inline">\(\Phi\)</span>、<span
-class="math inline">\(\Psi\)</span>、y的基础上求解x。</p>
+信号x：原始信号（不一定稀疏，因此需要稀疏矩阵进行变换）； 稀疏矩阵<span class="math inline">\(\Psi\)</span>:稀疏基，将原始信号变换为稀疏信号s。</p>
+<p>CS即在已知<span class="math inline">\(\Phi\)</span>、<span class="math inline">\(\Psi\)</span>、y的基础上求解x。</p>
 <p><span class="math inline">\(\Theta = \Phi
 \Psi\)</span>称为感知矩阵，<span class="math inline">\(y=\Theta
 s\)</span>是一个欠定方程</p>
@@ -273,17 +270,13 @@ s\)</span>是一个欠定方程</p>
 <ol type="1">
 <li><p>基追踪方法（BP） 原问题： <span class="math display">\[ \tilde{s}
 = \arg \min \left \\| \hat{s} \right \\| \_ 0 \quad \mbox{s.t.} \quad
-\Theta \hat{s}=y\]</span> 转换为1范数求解问题： <span
-class="math display">\[ \tilde{s} = \arg \min \left \\| \hat{s} \right
+\Theta \hat{s}=y\]</span> 转换为1范数求解问题： <span class="math display">\[ \tilde{s} = \arg \min \left \\| \hat{s} \right
 \\| \_ 1 \quad \mbox{s.t.} \quad \Theta \hat{s}=y\]</span>
 在噪声情况下，可以表示为： <span class="math display">\[ \tilde{s} =
 \arg \min \left \\| \hat{s} \right \\| \_ 1 \quad \mbox{s.t.} \quad
-\left \\| \Theta \hat{s}-y \right \\|_2 \leq \sigma\]</span> 其中有<span
-class="math inline">\(y=\Theta s+n\)</span> 以及 <span
-class="math inline">\(\left \\|n \right
+\left \\| \Theta \hat{s}-y \right \\|_2 \leq \sigma\]</span> 其中有<span class="math inline">\(y=\Theta s+n\)</span> 以及 <span class="math inline">\(\left \\|n \right
 \\|_2&lt;\sigma\)</span></p></li>
-<li><p>改进的基追踪算法(I-BP) 使用1范数约束： <span
-class="math display">\[ \tilde{s} = \arg \min \left \\| \hat{s} \right
+<li><p>改进的基追踪算法(I-BP) 使用1范数约束： <span class="math display">\[ \tilde{s} = \arg \min \left \\| \hat{s} \right
 \\| \_ 1 \quad \mbox{s.t.} \quad \left \\| \Theta \hat{s}-y \right \\|_1
 \leq \sigma\]</span></p></li>
 </ol>
@@ -294,17 +287,13 @@ class="math display">\[ \tilde{s} = \arg \min \left \\| \hat{s} \right
 <li>匹配追踪算法(MP)
 思想：对于稀疏信号s，观测向量y的结果只与s中非零系数对应的观测矩阵列向量有关。即只有这些列和y最匹配。
 每次迭代时，MP法将这些最匹配的列存入匹配矩阵。每次迭代都可以分为两步：原子选择和更新残差。
-流程： input: 归一化字典D（观测矩阵<span
-class="math inline">\(\Theta\)</span>），观测信号y，稀疏度K</li>
+流程： input: 归一化字典D（观测矩阵<span class="math inline">\(\Theta\)</span>），观测信号y，稀疏度K</li>
 </ol>
 <ol type="1">
 <li>初始化残差<span class="math inline">\(r_0=y\)</span>，x全0；</li>
 <li>第k步，从字典中选择<span class="math inline">\(d_i =
 \max_{j}&lt;d_j,r_k&gt;\)</span>；</li>
-<li>计算残差<span
-class="math inline">\(r_{k+1}=r_k-d_i&lt;r_k,d_i&gt;\)</span>，以及信号<span
-class="math inline">\(x_i=&lt;r_k,d_i&gt;\)</span>，<span
-class="math inline">\(d_i\)</span>加入匹配矩阵；</li>
+<li>计算残差<span class="math inline">\(r_{k+1}=r_k-d_i&lt;r_k,d_i&gt;\)</span>，以及信号<span class="math inline">\(x_i=&lt;r_k,d_i&gt;\)</span>，<span class="math inline">\(d_i\)</span>加入匹配矩阵；</li>
 <li>迭代计算(2)(3)步直到残差满足终止条件(稀疏度达到K或者其他)。
 MP算法各列向量并不是正交的，因此迭代之间会产生干扰，算法效率不高，逼近结果较差。</li>
 </ol>
