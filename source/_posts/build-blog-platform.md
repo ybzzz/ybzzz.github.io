@@ -87,13 +87,16 @@ branch: master
 ## 
 
 2019.08.03 add
+
 ## 添加blog对图片的支持
 1. 更改配置文件`_config.yml`中`post_asset_folder`为true。
-2. 在**blog文件夹**下安装图片支持插件`npm install hexo-asset-image --save`。
+2. ~~在**blog文件夹**下安装图片支持插件`npm install hexo-asset-image --save`。~~
+2. 安装`npm install hexo-image-link --save`
 3. 建立新文档xxx，在对应的文件夹中放置图片等文件，然后md文件中通过`![](xxx/image.png)`方式引入图片。
 4. hexo clean、hexo g、hexo s即可查看；hexo d即可push入git，网页也能看到图片。
 
 2022.03.04 add
+
 ## 支持数学公式
 + `npm uninstall hexo-renderer-marked`
 + `npm install hexo-renderer-pandoc`
