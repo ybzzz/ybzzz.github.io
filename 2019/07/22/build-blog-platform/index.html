@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en,zh-CN,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ybzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建blog记录">
+<meta property="og:url" content="https://ybzzz.github.io/2019/07/22/build-blog-platform/index.html">
+<meta property="og:site_name" content="Bin&#39;s Blog">
+<meta property="og:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-22T05:03:52.000Z">
+<meta property="article:modified_time" content="2022-03-13T15:34:09.678Z">
+<meta property="article:author" content="Yang Bin">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://ybzzz.github.io/2019/07/22/build-blog-platform/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo搭建blog记录 | Bin's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bin's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/07/22/build-blog-platform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yang Bin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo搭建blog记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-07-22 13:03:52" itemprop="dateCreated datePublished" datetime="2019-07-22T13:03:52+08:00">2019-07-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-03-13 23:34:09" itemprop="dateModified" datetime="2022-03-13T23:34:09+08:00">2022-03-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。
+<span id="more"></span></p>
+<h1 id="windows">Windows</h1>
+<h2 id="一准备工作">一、准备工作</h2>
+<h4 id="安装nodejs">安装nodejs</h4>
+<ol type="1">
+<li><p>官网下载系统对应的node.js安装包（windows64位的msi文件)，按照提示一步步安装。</p></li>
+<li><p>安装完成后再cmd中可以通过<code>node -v</code>和<code>nmp -v</code>分别查看node.js和nmp是否安装成功。</p></li>
+<li><p>如果盘够大，跳到第5步。(windows下)可以设置文件夹node_global和node_cache放置全模块所在路径和缓存路径。运行以下：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix&quot;node_global目录&quot;</span><br><span class="line">npm config set cache&quot;node_cache目录&quot;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>设置环境变量： 系统变量添加 变量名：<code>NODE_PATH</code>
+变量值：<code>node_global目录\node_modules</code>；
+用户变量PATH中将npm路径换成<code>node_global路径</code>以及添加<code>nodejs路径</code>。
+此时使用npm安装的文件都会放入对应的文件夹。</p></li>
+<li><p>由于国内镜像很慢，所以可以安装淘宝镜像
+<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p></li>
+</ol>
+<h4 id="安装git">安装git</h4>
+<ol type="1">
+<li><p>官网下载安装，安装完成后，会有git.bash、git.gui和git.cmd，个人习惯git.bash，和linux命令完全一致。</p></li>
+<li><p>为防止后续权限不足，更改git.bash权限为管理员</p></li>
+<li><p>配置全局用户名和邮箱（好像可以与github用户名邮箱不同，没有测试过，个人习惯相同）：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config global user.name&quot;github name&quot;</span><br><span class="line">git config global user.email&quot;email&quot;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>为使用SSH进行push等，需要申请SSH
+key。查看<code>C:\user\user name\.ssh</code>目录下是否有id_rsa和id_rsa.pub文件，如果有，下一步，如果没有，在当前文件夹下打开git.bash，创建SSH
+key：<code>ssh-keygen -t rsa C "youremail"</code></p></li>
+<li><p>打开github页面，将id_rsa.pub文件内容复制进<code>settings-&gt;SSH and GPG keys-&gt;New SSH key</code>中添加新的ssh
+keys。然后就可以本地进行git
+clone等操作。（会有警告，然后输入yes就可以了）</p></li>
+</ol>
+<h2 id="二安装hexo">二、安装hexo</h2>
+<ol type="1">
+<li><p>使用cnmp安装hexo博客框架。
+打开git.bash，运行<code>cnpm install -g hexo-cli</code>安装hexo，使用<code>hexo -v</code>验证。</p></li>
+<li><p>在一个文件夹下，使用<code>hexo init</code>初始化框架（管理员权限)。</p></li>
+<li><p><code>hexo g</code>生成静态文件。</p></li>
+<li><p><code>hexo s</code>启动服务，通过本地端口可以查看博客网页。</p></li>
+<li><p><code>hexo n "blog title"</code>新建一个blog，然后编辑该md文件。</p></li>
+</ol>
+<p>更多内容后续研究。。。</p>
+<h2 id="三部署在git上">三、部署在git上</h2>
+<ol type="1">
+<li><p>在个人github中新建repo名为<code>githubname.github.io</code>，注意githubname一定要是github的用户名。并复制对应的SSH值。</p></li>
+<li><p>在blog文件夹中安装git部署插件：<code>cnpm install --save hexo-deployer-git</code>。</p></li>
+<li><p>编辑本地blog文件夹下<code>_config.yml</code>文件中属性值：
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: ssh value you coped</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+注意，windows下冒号后有一个空格；也可以使用https访问，但每次都需要输入用户名和密码，比较麻烦。</p></li>
+<li><p>在生成静态文件后，使用<code>hexo d</code>进行部署，然后就可以使用<code>githubname.github.io</code>域名来访问个人博客。</p></li>
+</ol>
+<p><em>根据视频 <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14183335241576131046">手把手教你从0开始搭建自己的个人博客
+|无坑版视频教程| hexo</a> 以及 <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39345384/article/details/80095883">Windows下通过GitHub+Hexo搭建个人博客的步骤</a>
+学习记录。</em></p>
+<h1 id="mac">Mac</h1>
+<h2 id="preparation">Preparation</h2>
+<ul>
+<li>install npm <code>brew install node.js</code>
+<ul>
+<li><code>npm -v</code> to check version</li>
+</ul></li>
+<li>install hexo cli <code>npm install -g hexo-cli</code></li>
+</ul>
+<h2 id="init-hexo">Init hexo</h2>
+<ul>
+<li><code>hexo init</code> init hexo</li>
+<li><code>hexo g</code> generate files</li>
+<li><code>hexo s</code> run server</li>
+<li><code>hexo clean</code> clean generated files</li>
+<li><code>hexo d</code> deploy to remote</li>
+</ul>
+<h2 id="section"></h2>
+<p>2019.08.03 add ## 添加blog对图片的支持 1.
+更改配置文件<code>_config.yml</code>中<code>post_asset_folder</code>为true。
+2.
+在<strong>blog文件夹</strong>下安装图片支持插件<code>npm install hexo-asset-image --save</code>。
+3.
+建立新文档xxx，在对应的文件夹中放置图片等文件，然后md文件中通过<code>![](xxx/image.png)</code>方式引入图片。
+4. hexo clean、hexo g、hexo s即可查看；hexo
+d即可push入git，网页也能看到图片。</p>
+<p>2022.03.04 add ## 支持数学公式 +
+<code>npm uninstall hexo-renderer-marked</code> +
+<code>npm install hexo-renderer-pandoc</code> + enable mathjax in
+<code>_config.yml</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  ...</span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure> + enable mathjax for each file
+need to display equation</p>
+<blockquote>
+<p>https://github.com/theme-next/hexo-theme-next/blob/master/docs/MATH.md</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/03/linux-network-problem/" rel="next" title="Linux Network Problem">
+      Linux Network Problem <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-number">1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">一、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">安装git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">二、安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%83%A8%E7%BD%B2%E5%9C%A8git%E4%B8%8A"><span class="nav-number">1.3.</span> <span class="nav-text">三、部署在git上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac"><span class="nav-number">2.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Init hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">2.3.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yang Bin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:binyangxx@gmail.com" title="E-Mail → mailto:binyangxx@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-dog"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Bin</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
