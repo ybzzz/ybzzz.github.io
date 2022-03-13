@@ -28,7 +28,7 @@
 <meta property="og:description" content="使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-07-22T05:03:52.000Z">
-<meta property="article:modified_time" content="2022-03-13T15:34:09.678Z">
+<meta property="article:modified_time" content="2022-03-13T16:20:11.542Z">
 <meta property="article:author" content="Yang Bin">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-13 23:34:09" itemprop="dateModified" datetime="2022-03-13T23:34:09+08:00">2022-03-13</time>
+                <time title="Modified: 2022-03-14 00:20:11" itemprop="dateModified" datetime="2022-03-14T00:20:11+08:00">2022-03-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,8 +278,10 @@ clone等操作。（会有警告，然后输入yes就可以了）</p></li>
 注意，windows下冒号后有一个空格；也可以使用https访问，但每次都需要输入用户名和密码，比较麻烦。</p></li>
 <li><p>在生成静态文件后，使用<code>hexo d</code>进行部署，然后就可以使用<code>githubname.github.io</code>域名来访问个人博客。</p></li>
 </ol>
-<p><em>根据视频 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14183335241576131046">手把手教你从0开始搭建自己的个人博客
-|无坑版视频教程| hexo</a> 以及 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39345384/article/details/80095883">Windows下通过GitHub+Hexo搭建个人博客的步骤</a>
+<p><em>根据视频 <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/av44544186?from=search&amp;seid=14183335241576131046">手把手教你从0开始搭建自己的个人博客
+|无坑版视频教程| hexo</a> 以及 <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39345384/article/details/80095883">Windows下通过GitHub+Hexo搭建个人博客的步骤</a>
 学习记录。</em></p>
 <h1 id="mac">Mac</h1>
 <h2 id="preparation">Preparation</h2>
@@ -299,19 +301,24 @@ clone等操作。（会有警告，然后输入yes就可以了）</p></li>
 <li><code>hexo d</code> deploy to remote</li>
 </ul>
 <h2 id="section"></h2>
-<p>2019.08.03 add ## 添加blog对图片的支持 1.
-更改配置文件<code>_config.yml</code>中<code>post_asset_folder</code>为true。
-2.
-在<strong>blog文件夹</strong>下安装图片支持插件<code>npm install hexo-asset-image --save</code>。
-3.
-建立新文档xxx，在对应的文件夹中放置图片等文件，然后md文件中通过<code>![](xxx/image.png)</code>方式引入图片。
-4. hexo clean、hexo g、hexo s即可查看；hexo
-d即可push入git，网页也能看到图片。</p>
-<p>2022.03.04 add ## 支持数学公式 +
-<code>npm uninstall hexo-renderer-marked</code> +
-<code>npm install hexo-renderer-pandoc</code> + enable mathjax in
-<code>_config.yml</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  ...</span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure> + enable mathjax for each file
-need to display equation</p>
+<p>2019.08.03 add</p>
+<h2 id="添加blog对图片的支持">添加blog对图片的支持</h2>
+<ol type="1">
+<li>更改配置文件<code>_config.yml</code>中<code>post_asset_folder</code>为true。</li>
+<li><del>在<strong>blog文件夹</strong>下安装图片支持插件<code>npm install hexo-asset-image --save</code>。</del></li>
+<li>安装<code>npm install hexo-image-link --save</code></li>
+<li>建立新文档xxx，在对应的文件夹中放置图片等文件，然后md文件中通过<code>&#123;% asset_img image.png  %&#125;</code>方式引入图片。</li>
+<li>hexo clean、hexo g、hexo s即可查看；hexo
+d即可push入git，网页也能看到图片。</li>
+</ol>
+<p>2022.03.04 add</p>
+<h2 id="支持数学公式">支持数学公式</h2>
+<ul>
+<li><code>npm uninstall hexo-renderer-marked</code></li>
+<li><code>npm install hexo-renderer-pandoc</code></li>
+<li>enable mathjax in <code>_config.yml</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  ...</span><br><span class="line">  mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure></li>
+<li>enable mathjax for each file need to display equation</li>
+</ul>
 <blockquote>
 <p>https://github.com/theme-next/hexo-theme-next/blob/master/docs/MATH.md</p>
 </blockquote>
@@ -334,8 +341,8 @@ need to display equation</p>
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/08/03/linux-network-problem/" rel="next" title="Linux Network Problem">
-      Linux Network Problem <i class="fa fa-chevron-right"></i>
+    <a href="/2019/08/03/linux-network-problem/" rel="next" title="linux network problem">
+      linux network problem <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -395,7 +402,7 @@ need to display equation</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-number">1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">一、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">安装git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">二、安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%83%A8%E7%BD%B2%E5%9C%A8git%E4%B8%8A"><span class="nav-number">1.3.</span> <span class="nav-text">三、部署在git上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac"><span class="nav-number">2.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Init hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">2.3.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-number">1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">一、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">安装nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">安装git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%AE%89%E8%A3%85hexo"><span class="nav-number">1.2.</span> <span class="nav-text">二、安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%83%A8%E7%BD%B2%E5%9C%A8git%E4%B8%8A"><span class="nav-number">1.3.</span> <span class="nav-text">三、部署在git上</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac"><span class="nav-number">2.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Init hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">2.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0blog%E5%AF%B9%E5%9B%BE%E7%89%87%E7%9A%84%E6%94%AF%E6%8C%81"><span class="nav-number">2.4.</span> <span class="nav-text">添加blog对图片的支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.5.</span> <span class="nav-text">支持数学公式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
