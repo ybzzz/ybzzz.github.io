@@ -23,7 +23,7 @@
   <meta name="description" content="MySql索引相关内容。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Database Index">
-<meta property="og:url" content="https://ybzzz.github.io/2019/08/26/DBindex/index.html">
+<meta property="og:url" content="https://ybzzz.github.io/2019/08/26/DatabaseIndex/index.html">
 <meta property="og:site_name" content="Bin&#39;s Blog">
 <meta property="og:description" content="MySql索引相关内容。">
 <meta property="og:locale" content="en_US">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="Database">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ybzzz.github.io/2019/08/26/DBindex/">
+<link rel="canonical" href="https://ybzzz.github.io/2019/08/26/DatabaseIndex/">
 
 
 <script id="page-configurations">
@@ -176,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/08/26/DBindex/">
+    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/08/26/DatabaseIndex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -233,86 +233,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>MySql索引相关内容。 <span id="more"></span></p>
-<h1 id="索引类型">索引类型</h1>
-<p>在MySql中，索引是在存储引擎层而不是服务器层实现的。</p>
-<h2 id="b-treeb-tree">B Tree/B+ Tree</h2>
-<p>索引对多个值进行排序的依据是CREATE TABLE语句中定义索引时的顺序。</p>
+        <p>MySql索引相关内容。<br><span id="more"></span></p>
+<h1 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h1><p>在MySql中，索引是在存储引擎层而不是服务器层实现的。</p>
+<h2 id="B-Tree-B-Tree"><a href="#B-Tree-B-Tree" class="headerlink" title="B Tree/B+ Tree"></a>B Tree/B+ Tree</h2><p>索引对多个值进行排序的依据是CREATE TABLE语句中定义索引时的顺序。</p>
 <p>适用于全键值、键值范围或键前缀查找。其中键前缀查找只适用于根据最左前缀的查找。</p>
-<p>索引对如下类型查询有效： + 全值匹配：和索引中的所有列进行匹配； +
-匹配最左前缀：只使用索引前几列； +
-匹配列前缀：匹配某一列的值的开头部分； +
-匹配范围值：查找第一列在某一范围内的值； +
-精确匹配某一列并范围匹配另外一列：匹配第一列以及第二列前缀为指定的查找。</p>
-<p>限制： + 如果不是按照索引的最左列开始查找，则无法使用索引； +
-不能跳过索引中的列； +
-若查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找；</p>
-<h2 id="哈希索引hash-index">哈希索引(hash index)</h2>
-<p>只有精确匹配索引所有列的查询才有效。</p>
-<p>限制： + 哈希索引只包含哈希值和行指针，而不存储字段值； +
-哈希索引数据并不是按照索引值顺序存储的，所以无法用于排序； +
-不支持部分索引列匹配查找。 + 只支持等值比较查询，包括=,IN() +
-哈希冲突很多的话，索引维护操作的代价会很高（如删除操作）。</p>
-<h2 id="空间数据索引r-tree">空间数据索引(R-TREE)</h2>
-<p>空间索引会从所有维度来索引数据。 + 可以使用任意维度类组合查询
-必须使用MySql的GIS相关函数来维护数据，而MySql的GIS支持并不完善，所以大部分人都不会使用这个特性。</p>
-<h2 id="全文索引">全文索引</h2>
-<p>查找文本中的关键字，而不是直接比较索引中的值。
-需要注意细节：停用词、词干和复数、布尔搜索等。</p>
-<p>全文索引通常使用倒排索引(inverted
-index)来实现。通常利用关联数组实现存储单词与单词滋生在一个或多个文档中所在位置之间的映射。如：
-+ inverted file index, 表现为{单词,单词所在文档ID} + full inverted
-index, 表现为{单词,(单词所在文档的ID，在具体文档中的位置)}</p>
-<p>MySql中用法示例：<code>select * from example match(column1) against ('find' in natural language mode)</code>
-&gt;具体用法见 MySql技术内幕 P240</p>
-<h2 id="其他索引类别">其他索引类别</h2>
-<p>TokuDB：分形树索引(fractal tree index) InnoDB：聚簇索引、覆盖索引</p>
-<h1 id="索引优点">索引优点</h1>
+<p>索引对如下类型查询有效：</p>
 <ul>
+<li>全值匹配：和索引中的所有列进行匹配；</li>
+<li>匹配最左前缀：只使用索引前几列；</li>
+<li>匹配列前缀：匹配某一列的值的开头部分；</li>
+<li>匹配范围值：查找第一列在某一范围内的值；</li>
+<li>精确匹配某一列并范围匹配另外一列：匹配第一列以及第二列前缀为指定的查找。</li>
+</ul>
+<p>限制：</p>
+<ul>
+<li>如果不是按照索引的最左列开始查找，则无法使用索引；</li>
+<li>不能跳过索引中的列；</li>
+<li>若查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找；</li>
+</ul>
+<h2 id="哈希索引-hash-index"><a href="#哈希索引-hash-index" class="headerlink" title="哈希索引(hash index)"></a>哈希索引(hash index)</h2><p>只有精确匹配索引所有列的查询才有效。</p>
+<p>限制：</p>
+<ul>
+<li>哈希索引只包含哈希值和行指针，而不存储字段值；</li>
+<li>哈希索引数据并不是按照索引值顺序存储的，所以无法用于排序；</li>
+<li>不支持部分索引列匹配查找。</li>
+<li>只支持等值比较查询，包括=,IN()</li>
+<li>哈希冲突很多的话，索引维护操作的代价会很高（如删除操作）。</li>
+</ul>
+<h2 id="空间数据索引-R-TREE"><a href="#空间数据索引-R-TREE" class="headerlink" title="空间数据索引(R-TREE)"></a>空间数据索引(R-TREE)</h2><p>空间索引会从所有维度来索引数据。</p>
+<ul>
+<li>可以使用任意维度类组合查询<br>必须使用MySql的GIS相关函数来维护数据，而MySql的GIS支持并不完善，所以大部分人都不会使用这个特性。</li>
+</ul>
+<h2 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h2><p>查找文本中的关键字，而不是直接比较索引中的值。<br>需要注意细节：停用词、词干和复数、布尔搜索等。</p>
+<p>全文索引通常使用倒排索引(inverted index)来实现。通常利用关联数组实现存储单词与单词滋生在一个或多个文档中所在位置之间的映射。如：</p>
+<ul>
+<li>inverted file index, 表现为{单词,单词所在文档ID}</li>
+<li>full inverted index, 表现为{单词,(单词所在文档的ID，在具体文档中的位置)}</li>
+</ul>
+<p>MySql中用法示例：<code>select * from example match(column1) against (&#39;find&#39; in natural language mode)</code></p>
+<blockquote>
+<p>具体用法见 MySql技术内幕 P240</p>
+</blockquote>
+<h2 id="其他索引类别"><a href="#其他索引类别" class="headerlink" title="其他索引类别"></a>其他索引类别</h2><p>TokuDB：分形树索引(fractal tree index)<br>InnoDB：聚簇索引、覆盖索引</p>
+<h1 id="索引优点"><a href="#索引优点" class="headerlink" title="索引优点"></a>索引优点</h1><ul>
 <li>大大减少了服务器需要扫描的数据量；</li>
 <li>帮助服务器避免排序和临时表；</li>
 <li>将随机I/O变为顺序I/O。</li>
 </ul>
-<h1 id="索引策略">索引策略</h1>
-<h2 id="独立的列">独立的列</h2>
-<p>索引列不能是表达式的一部分，也不能是函数的参数。
-如<code>select actor_id from actor where actor_id+1=5</code>
-&gt;养成将索引列单独放在比较符号一侧的习惯</p>
-<h2 id="前缀索引和索引选择性">前缀索引和索引选择性</h2>
-<p>对于索引较长的情况，可以索引开始的部分字符，这样可以节约索引空间，提高索引效率，但是会降低索引的选择性
-对于BLOB、TEXT或者很长的VARCHAR类型的列，必须使用前缀索引，因为MySql不允许索引这些列的完整长度。
-需要选择足够长的前缀保证较高的选择性。</p>
-<h2 id="多列索引">多列索引</h2>
-<p>为每个列创建独立的索引或者按照错误的顺序创建多列索引，得不到好的效果。</p>
-<h2 id="合适的索引列顺序">合适的索引列顺序</h2>
-<p>针对B-TREE索引。<br /> 原则： +
-在不需要考虑排序和分组时，将选择性最高的列放到索引最前列；</p>
-<h2 id="聚簇索引">聚簇索引</h2>
-<p>不是一种单独的索引类型，而是一种数据存储方式。（如同一个结构中保存了B-TREE索引和数据行）；
-一个表只能有一个聚簇索引。 优点： + 可以把相关的数据保存在一起； +
-数据访问更快； +
-使用覆盖索引扫描的查询可以直接使用页节点中的主键值。</p>
-<p>缺点: +
-若数据都在内存中，则访问的顺序就没这么重要了，聚簇索引也就没什么优势； +
-插入速度依赖于插入顺序，（按主键的顺序） + 更新聚簇索引的代价很高； +
-插入新行或者更新主键时，可能导致页分裂； +
-可能导致全表扫描变慢，尤其是行比较稀疏时； +
-二级索引访问需要两次索引查找。（二级索引保存的行指针保存的不是指向行的物理位置指针，而是行的主键值）</p>
-<h2 id="覆盖索引">覆盖索引</h2>
-<p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，称为覆盖索引。即只需要扫描索引无须回表。
-优点： + 只需要访问索引，可以极大的减少数据访问量； +
-因为索引是按照列值顺序存储的，所以范围查询的I/O次数会少很多； +
-一些存储引擎的数据依赖于操作系统缓存，因此访问数据需要一次系统调用。覆盖查询可以避免；
-+ 如果二级主键能够覆盖查询，则可以避免对主键索引的二次查询。</p>
+<h1 id="索引策略"><a href="#索引策略" class="headerlink" title="索引策略"></a>索引策略</h1><h2 id="独立的列"><a href="#独立的列" class="headerlink" title="独立的列"></a>独立的列</h2><p>索引列不能是表达式的一部分，也不能是函数的参数。<br>如<code>select actor_id from actor where actor_id+1=5</code></p>
 <blockquote>
-<p>MySql不能在索引中执行LIKE操作。
-MySql能在索引中做最左前缀匹配的LIKE比较，但是如果是通配符开头的LIKE查询，存储引擎无法做比较查询。</p>
+<p>养成将索引列单独放在比较符号一侧的习惯</p>
 </blockquote>
-<h2 id="使用索引扫描来做排序">使用索引扫描来做排序</h2>
-<p>只有当索引的列顺序和ORDER
-BY子句的顺序完全一致，并且所有列的排序方向（倒序或正序）都一样时，MySql才能使用索引来对结果做排序。</p>
+<h2 id="前缀索引和索引选择性"><a href="#前缀索引和索引选择性" class="headerlink" title="前缀索引和索引选择性"></a>前缀索引和索引选择性</h2><p>对于索引较长的情况，可以索引开始的部分字符，这样可以节约索引空间，提高索引效率，但是会降低索引的选择性<br>对于BLOB、TEXT或者很长的VARCHAR类型的列，必须使用前缀索引，因为MySql不允许索引这些列的完整长度。<br>需要选择足够长的前缀保证较高的选择性。</p>
+<h2 id="多列索引"><a href="#多列索引" class="headerlink" title="多列索引"></a>多列索引</h2><p>为每个列创建独立的索引或者按照错误的顺序创建多列索引，得不到好的效果。</p>
+<h2 id="合适的索引列顺序"><a href="#合适的索引列顺序" class="headerlink" title="合适的索引列顺序"></a>合适的索引列顺序</h2><p>针对B-TREE索引。<br /><br>原则：</p>
+<ul>
+<li>在不需要考虑排序和分组时，将选择性最高的列放到索引最前列；</li>
+</ul>
+<h2 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h2><p>不是一种单独的索引类型，而是一种数据存储方式。（如同一个结构中保存了B-TREE索引和数据行）；<br>一个表只能有一个聚簇索引。<br>优点：</p>
+<ul>
+<li>可以把相关的数据保存在一起；</li>
+<li>数据访问更快；</li>
+<li>使用覆盖索引扫描的查询可以直接使用页节点中的主键值。</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>若数据都在内存中，则访问的顺序就没这么重要了，聚簇索引也就没什么优势；</li>
+<li>插入速度依赖于插入顺序，（按主键的顺序）</li>
+<li>更新聚簇索引的代价很高；</li>
+<li>插入新行或者更新主键时，可能导致页分裂；</li>
+<li>可能导致全表扫描变慢，尤其是行比较稀疏时；</li>
+<li>二级索引访问需要两次索引查找。（二级索引保存的行指针保存的不是指向行的物理位置指针，而是行的主键值）</li>
+</ul>
+<h2 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h2><p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，称为覆盖索引。即只需要扫描索引无须回表。<br>优点：</p>
+<ul>
+<li>只需要访问索引，可以极大的减少数据访问量；</li>
+<li>因为索引是按照列值顺序存储的，所以范围查询的I/O次数会少很多；</li>
+<li>一些存储引擎的数据依赖于操作系统缓存，因此访问数据需要一次系统调用。覆盖查询可以避免；</li>
+<li>如果二级主键能够覆盖查询，则可以避免对主键索引的二次查询。</li>
+</ul>
+<blockquote>
+<p>MySql不能在索引中执行LIKE操作。<br>MySql能在索引中做最左前缀匹配的LIKE比较，但是如果是通配符开头的LIKE查询，存储引擎无法做比较查询。</p>
+</blockquote>
+<h2 id="使用索引扫描来做排序"><a href="#使用索引扫描来做排序" class="headerlink" title="使用索引扫描来做排序"></a>使用索引扫描来做排序</h2><p>只有当索引的列顺序和ORDER BY子句的顺序完全一致，并且所有列的排序方向（倒序或正序）都一样时，MySql才能使用索引来对结果做排序。</p>
 <p>[===============]</p>
-<p>[1] 高性能MySql 第三版 [2] MySql技术内幕 InnoDB存储引擎 第二版</p>
+<p>[1] 高性能MySql 第三版<br>[2] MySql技术内幕 InnoDB存储引擎 第二版</p>
 
     </div>
 
@@ -396,7 +401,7 @@ BY子句的顺序完全一致，并且所有列的排序方向（倒序或正序
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">索引类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#b-treeb-tree"><span class="nav-number">1.1.</span> <span class="nav-text">B Tree&#x2F;B+ Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%B4%A2%E5%BC%95hash-index"><span class="nav-number">1.2.</span> <span class="nav-text">哈希索引(hash index)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B4%A2%E5%BC%95r-tree"><span class="nav-number">1.3.</span> <span class="nav-text">空间数据索引(R-TREE)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%96%87%E7%B4%A2%E5%BC%95"><span class="nav-number">1.4.</span> <span class="nav-text">全文索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%88%AB"><span class="nav-number">1.5.</span> <span class="nav-text">其他索引类别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E4%BC%98%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">索引优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%AD%96%E7%95%A5"><span class="nav-number">3.</span> <span class="nav-text">索引策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%88%97"><span class="nav-number">3.1.</span> <span class="nav-text">独立的列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E7%B4%A2%E5%BC%95%E5%92%8C%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">前缀索引和索引选择性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95"><span class="nav-number">3.3.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E9%80%82%E7%9A%84%E7%B4%A2%E5%BC%95%E5%88%97%E9%A1%BA%E5%BA%8F"><span class="nav-number">3.4.</span> <span class="nav-text">合适的索引列顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95"><span class="nav-number">3.5.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-number">3.6.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E6%89%AB%E6%8F%8F%E6%9D%A5%E5%81%9A%E6%8E%92%E5%BA%8F"><span class="nav-number">3.7.</span> <span class="nav-text">使用索引扫描来做排序</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">索引类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree-B-Tree"><span class="nav-number">1.1.</span> <span class="nav-text">B Tree&#x2F;B+ Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E7%B4%A2%E5%BC%95-hash-index"><span class="nav-number">1.2.</span> <span class="nav-text">哈希索引(hash index)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B4%A2%E5%BC%95-R-TREE"><span class="nav-number">1.3.</span> <span class="nav-text">空间数据索引(R-TREE)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%96%87%E7%B4%A2%E5%BC%95"><span class="nav-number">1.4.</span> <span class="nav-text">全文索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%88%AB"><span class="nav-number">1.5.</span> <span class="nav-text">其他索引类别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E4%BC%98%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">索引优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%AD%96%E7%95%A5"><span class="nav-number">3.</span> <span class="nav-text">索引策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%88%97"><span class="nav-number">3.1.</span> <span class="nav-text">独立的列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E7%B4%A2%E5%BC%95%E5%92%8C%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">前缀索引和索引选择性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95"><span class="nav-number">3.3.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E9%80%82%E7%9A%84%E7%B4%A2%E5%BC%95%E5%88%97%E9%A1%BA%E5%BA%8F"><span class="nav-number">3.4.</span> <span class="nav-text">合适的索引列顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95"><span class="nav-number">3.5.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-number">3.6.</span> <span class="nav-text">覆盖索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E6%89%AB%E6%8F%8F%E6%9D%A5%E5%81%9A%E6%8E%92%E5%BA%8F"><span class="nav-number">3.7.</span> <span class="nav-text">使用索引扫描来做排序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
