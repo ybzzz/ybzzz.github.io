@@ -2,7 +2,9 @@
 title: C++继承 构造函数写法
 date: 2019-09-03 13:42:09
 categories:
-- c++
+- Software Development
+- Programming Language
+- C++
 tags:
 - c++
 ---

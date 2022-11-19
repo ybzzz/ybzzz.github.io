@@ -1,11 +1,12 @@
 ---
-title: linux network problem
+title: Linux Network Problem
 date: 2019-08-03 10:45:19
 categories:
-- linux
+- Software Development
+- Operating System
+- Linux
 tags:
-- linux
-- 网络
+- Linux
 ---
 Linux系统出现网络问题的解决方法记录。
 <!--more-->

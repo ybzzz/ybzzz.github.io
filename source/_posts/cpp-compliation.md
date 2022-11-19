@@ -1,12 +1,12 @@
 ---
-title: linux下cpp编译
+title: Compile cpp Project in Linux
 date: 2019-08-03 13:18:12
 categories:
-- c++
+- Software Development
+- Programming Language
+- C++
 tags:
-- linux
 - c++
-- 编译
 ---
 
 

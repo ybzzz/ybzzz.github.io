@@ -2,11 +2,12 @@
 title: Compressed Sensing
 date: 2019-08-25 10:56:12
 mathjax: true
+password: whydoyouwanttoopen
 categories:
-- communication
+- Archived
+- Communication
 tags:
-- compressed sensing
-- mmwave communication
+- Communication
 ---
 
 压缩感知简单介绍以及毫米波常用CS算法总结记录。

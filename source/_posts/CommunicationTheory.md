@@ -1,11 +1,12 @@
 ---
-title: 一些通信概念
+title: Basic Communication Concepts
 date: 2019-08-25 10:55:46
 categories:
-- communication
+- Archived
+- Communication
+password: whydoyouwanttoopen 
 tags:
-- communication
-- spectrum
+- Communication
 ---
 
 记录一些容易混淆的通信概念。

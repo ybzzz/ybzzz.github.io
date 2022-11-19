@@ -2,7 +2,9 @@
 title: C++ vtable Error
 date: 2019-09-02 17:13:04
 categories:
-- c++
+- Software Development
+- Programming Language
+- C++
 tags:
 - c++
 ---

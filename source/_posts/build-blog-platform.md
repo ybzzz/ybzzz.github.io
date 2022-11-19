@@ -2,9 +2,10 @@
 title: Hexo搭建blog记录
 date: 2019-07-22 13:03:52
 categories:
-- hexo
+- Tools
+- Hexo
 tags:
-- hexo
+- Hexo
 ---
 
 使用Hexo搭建个人博客，并通过github进行发布。该搭建过程是在windows上完成的，除开部分权限，与Linux上完全一样。

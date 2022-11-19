@@ -1,11 +1,11 @@
 ---
-title: 数据库索引
+title: Database Index
 date: 2019-08-26 19:32:01
 categories:
-- database
+- Software Development
+- Database
 tags:
-- mysql
-- database
+- Database
 ---
 
 MySql索引相关内容。

@@ -2,11 +2,11 @@
 title: debug
 date: 2019-08-03 20:37:12
 categories:
-- c++
+- Software Development
+- Programming Language
+- C++
 tags:
-- linux
 - c++
-- debug
 ---
 linux下几个调试工具及其使用。
 <!--more-->
@@ -15,7 +15,7 @@ linux下几个调试工具及其使用。
 跟踪系统调用。用法：`strace ./test`
 得到的信息中每一行都是一个系统调用，等号左边是系统调用的函数名及其参数，右边是该调用的返回值。
 `strace -c ./test`统计系统调用，结果如下：
-![strace -c](debug/stracec.png)
+![strace -c](Debug/stracec.png)
 
 其他参数：
 + `-o filename`将结果输入到文件中（与`2>filename`作用一样，其中`2>`为错误重定向符号，将写入`stderr`的信息写入`filename`中）；
@@ -56,15 +56,15 @@ coredump文件时进程终止时的现场数据（内存、CPU寄存器、各种
 ### ps
 列出当前运行的进程。
 常用参数如下图：
-![ps parameter](debug/ps.PNG)
+![ps parameter](Debug/ps.PNG)
 
 ### Valgrind
 内存分析工具。由一系列工具组成：
-![Valgrind体系结构图](debug/valgrind.PNG)
+![Valgrind体系结构图](Debug/valgrind.PNG)
 
 
 程序内存空间：代码段、初始化数据段、未初始化数据段、堆、栈，具体如下：
-![内存中程序各数据分布](debug/ProgramMem.jpg)
+![内存中程序各数据分布](Debug/ProgramMem.jpg)
 
 
 

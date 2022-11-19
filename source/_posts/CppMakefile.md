@@ -2,10 +2,11 @@
 title: CppMakefile
 date: 2019-08-03 19:39:06
 categories:
-- c++
+- Software Development
+- Programming Language
+- C++
 tags:
 - c++
-- linux
 ---
 
 linux下c++编程，makefile编写方式。

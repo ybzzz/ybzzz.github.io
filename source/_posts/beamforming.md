@@ -1,12 +1,13 @@
 ---
-title: beamforming
+title: Beamforming
 date: 2019-08-26 15:42:34
 mathjax: true
+password: doyoureallyunderstand
 categories:
-- communication
+- Archived
+- Communication
 tags:
-- mmwave
-- communication
+- Communication
 ---
 
 介绍beamforming，主要是毫米波beamforming结构。
@@ -51,7 +52,7 @@ $${\bf U}^{*}y {\bf V} = {\bf \Sigma} s + {\bf U}^{*}n $$
 ABF：包括扇区级扫码、beam refinement、波束追踪等阶段。但是受相移器量化精度和幅度的限制。
 
 提出混合波束赋形(hybrid beamforming):
-![HBF architecture](beamforming/HBFarchitecture.png)
+![HBF architecture](Beamforming/HBFarchitecture.png)
 如上图结构，可以得到接收信号为：
 $$ \bf y = W_{BB}^{*} W_{RF}^{*} H F_{RF} F_{BB} s + W_{BB}^{*} W_{RF}^{*} n $$
 
