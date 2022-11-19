@@ -20,23 +20,20 @@
     var CONFIG = {"hostname":"ybzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="介绍beamforming，主要是毫米波beamforming结构。">
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="beamforming">
-<meta property="og:url" content="https://ybzzz.github.io/2019/08/26/beamforming/index.html">
+<meta property="og:title" content="Beamforming">
+<meta property="og:url" content="https://ybzzz.github.io/2019/08/26/Beamforming/index.html">
 <meta property="og:site_name" content="Bin&#39;s Blog">
-<meta property="og:description" content="介绍beamforming，主要是毫米波beamforming结构。">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ybzzz.github.io/2019/08/26/beamforming/HBFarchitecture.png">
 <meta property="article:published_time" content="2019-08-26T07:42:34.000Z">
-<meta property="article:modified_time" content="2022-03-13T15:34:09.675Z">
+<meta property="article:modified_time" content="2022-11-19T08:42:05.243Z">
 <meta property="article:author" content="Yang Bin">
-<meta property="article:tag" content="communication">
-<meta property="article:tag" content="mmwave">
+<meta property="article:tag" content="Communication">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ybzzz.github.io/2019/08/26/beamforming/HBFarchitecture.png">
 
-<link rel="canonical" href="https://ybzzz.github.io/2019/08/26/beamforming/">
+<link rel="canonical" href="https://ybzzz.github.io/2019/08/26/Beamforming/">
 
 
 <script id="page-configurations">
@@ -49,7 +46,7 @@
   };
 </script>
 
-  <title>beamforming | Bin's Blog</title>
+  <title>Beamforming | Bin's Blog</title>
   
 
 
@@ -128,12 +125,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -179,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/08/26/beamforming/">
+    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/08/26/Beamforming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -192,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          beamforming
+          Beamforming
         </h1>
 
         <div class="post-meta">
@@ -209,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-13 23:34:09" itemprop="dateModified" datetime="2022-03-13T23:34:09+08:00">2022-03-13</time>
+                <time title="Modified: 2022-11-19 16:42:05" itemprop="dateModified" datetime="2022-11-19T16:42:05+08:00">2022-11-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,7 +214,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/communication/" itemprop="url" rel="index"><span itemprop="name">communication</span></a>
+                  <a href="/categories/Archived/" itemprop="url" rel="index"><span itemprop="name">Archived</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Archived/Communication/" itemprop="url" rel="index"><span itemprop="name">Communication</span></a>
                 </span>
             </span>
 
@@ -232,53 +233,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>介绍beamforming，主要是毫米波beamforming结构。</p>
-<span id="more"></span>
-<h2 id="beamforming作用">beamforming作用</h2>
-<p>模拟波束赋形：调整天线波束相位幅度以获得增益；
-数字波束赋形：通过SVD分解等进行预编码来获得增益。</p>
-<p>一般将ABF称为波束赋形，需要小天线间距，利用空间信道的强相关性和波的干涉原理产生强方向性的辐射方向图；
-DBF称为预编码，基站侧使用大间距的多跟天线阵列，有基于码本的和无码本的两种方式。</p>
-<h2 id="低频段">低频段</h2>
-<p>对于sub-6G频段，一般使用MIMO天线系统，且天线数较少，可以通过信道估计获得信道矩阵H。
-接收信号为： <span class="math display">\[y={\bf H}s+n\]</span>
-对信道矩阵H进行SVD分解得到： <span class="math display">\[\bf H=U \Sigma
-V^{*}\]</span> 因此选择precoder矩阵<span
-class="math inline">\(U^{*}\)</span>和combiner矩阵<span
-class="math inline">\(V\)</span>，可以得到： <span
-class="math display">\[{\bf U}^{*}y {\bf V} = {\bf \Sigma} s + {\bf
-U}^{*}n \]</span>
-得到等效信道，解码出对应的发送信号。实现吞吐量的最大化。</p>
-<p>有基于码本和无码本两种方式。</p>
-<p>缺点：量化精度导致性能损失；</p>
-<p>无码本：BS基于上行信道估计下行信道信息；根据SVD分解获得需要的预编码矩阵。
-&gt;优点：避免量化精度的损失；
-缺点：CSI的获取以及信道互易性的利用具有实时性；反馈开销增大。</p>
-<h2 id="毫米波频段">毫米波频段</h2>
-<p>特点： 1. 硬件约束：由于毫米波波长很短，可以采用massive
-MIMO，即使用更多的天线；高精度ADCs导致高功耗，因此很难为每个天线配备一个RF
-chain； 2. 计算复杂度：由于massive
-MIMO导致信道矩阵维度很高，因此信道估计、预编码等计算复杂度大大提高； 3.
-稀疏性：毫米波传输特性导致信道矩阵比较稀疏（有用的径比较少，且以直视径为主）。</p>
-<p>基于上述特点，毫米波频段下提出两种传输结构：混合预编码(HBF)、低精度ADCs（1比特）。</p>
-<h3 id="混合预编码">混合预编码</h3>
-<p>对于DBF，每个天线都需要一个RF
-chain，但是可以支持多流传输；对于ABF，只需要一个RF
-chain，然后通过相移器改变，但是只支持单流传输。
-ABF：包括扇区级扫码、beam
-refinement、波束追踪等阶段。但是受相移器量化精度和幅度的限制。</p>
-<p>提出混合波束赋形(hybrid beamforming): <img src="/2019/08/26/beamforming/HBFarchitecture.png" class="" title="HBF architecture">
-如上图结构，可以得到接收信号为： <span class="math display">\[ \bf y =
-W_{BB}^{*} W_{RF}^{*} H F_{RF} F_{BB} s + W_{BB}^{*} W_{RF}^{*} n
-\]</span></p>
-<h3 id="bit-adc">1 bit ADC</h3>
-<blockquote>
-<p>略 可参考 A. Alkhateeb, J. Mo, N. Gonzalez-Prelcic and R. W. Heath,
-"MIMO Precoding and Combining Solutions for Millimeter-Wave Systems," in
-IEEE Communications Magazine, vol. 52, no. 12, pp. 122-131, December
-2014.</p>
-</blockquote>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="cb167182ae3c4d595c0d3693e989132db91a604bace47934d7e2c8e651b700e1">480e46951da4b3e23b0dc5b6ddf0dea43433ca8feed96b1aef49ad035e01e891c3329d5a219da487662d35602975e89b31b81fb8794724fc425133fa5efbfffe673beed68f647c56051d39f554662e0cb9647a49159cd74798609354ecdf5f32acb155bb79c3d78b12de9108fbb0682972d94562cd452e79bc30328fcd4b4ffef0c52a5c0be85a323610b749baba94c2818ffeeaa97d319c89e58561a4498c933eee8b322fc93b130530ed5ec2a81a81155262b9b90c72637a6e2e594e65543a2ad57c0f4b7fd425c18bc1b1a0c5f9c58c3384a96709ae968588b8a5cfac3be25e8ceb61ded4d20aeaa29145dcac4168c786bfde379840fffa6c5a8df995852ccda32e9d63dd66efcf4c6ffa142dcb95587c2a673d3167b863a636502f28e13cc5b9daafa03dc65db91917590d6ee8cd593164109dc6fbf94e05f3f12acdf93cbb43e98083608c3ff2fa67a3f5fbde1468363af27379ac53f6fce39b3f75ff27e542e3672bdb1f319bc992d9fa96356659f226aad238ff2193af4ad721b9f33023130a004b41ed74a39142e43848e5b49e729f5b1ec5ec4f9f2a4018fdc8582a22b046e70ef5129b835ebd1e582f467589586d64011635e6bd40c1fcea24d140ef87336e295ccae92c265246f164746d1478f4fcc29050cf5510cbe790fef6a205b969d11b5f795e6ce8959f206815040f68f4272bcc6b79ebcd00fac4137590783fc7364d048361a363bdf52974c6cb33e0f8e606e215edce1e1bcdd1431c83e0e4b3645cb52595ed5b07d33da8c36bba6350c164165bb8ef039a6a7416fd6fac5bd510424bc6ef7109d4a5afeaee1593e8fb11b621e54a4fd21d44ec38fdc8506447955b8caee11fe2ca6a56881bdd78bb96b2fffd19bea17799bd072a116656df63b9da288183f68157d6a48a977b3d36dab34218c6f34234c91e5316d57b2a6da4ac1874750c89a07ee58675f0a789d019cd1d1325b2b112a58292819c4bc84f9e1dffe834c16c6915cb6da0a5f00f792606163c9351efe7c8dace17eef4077853ef8bbb971d131fab2af9aa689bd7dc63f17aab820c8afe6af2a3a9c321001ba166be6de8a079fc1336f9146cb3d3b6861269d55c5430175fc95711f2978c5942df6ee18f02442030f4233e0766c7d106d10f9f403e07915def1d5f5a814e19bf959774d2b488c7d77e03828d843699d1fd7e2384ef67ce96a273384593d24c215b849caaf1f398c4a44162bc6b90b9d44fb181734f7c9b6352968f6eb1dd5fb741ddf250fd5985c74c59a702402762149159d54d389b15dcadcdbb6104373593274fc65f0330328a0a5b8be3cc54a5d9878b0bc638d7b97ab66332f7f90cbdd5bd484719589f6ee118da2472db680f6153b125390f211f63e735bd00682763f7d5ea55e61e53dfffa43b312f3d592737f86a95286fda2da8412641c2ec9d2e3f55e02226048b57d6f7265072005d0e91e091324cf0e1430d9d0915958fbc910fa3eeea4334e45ab768ce6376050574ec8a5da59c4bb982c635ef31c17e5d52b5bcc02606e89c2c12dcc50e6d74bc6092fe0ad355ab7f710c4680dd39af24b1ec9214cb993564f90939046f3b742e567cf39aaa477b43c1bc0ae4ee11c30e18ebffd22ac83e744e6867a252b73eae210c6a73b61a3b28ddeadd64626c2809f6b852dfa61d20ca1cbcb7ea5c5e689c880b929267bb65c28deaacca7bdc3aa99af7fb43ef34f9bbe57874916bf941d15cabf4a7b4747f30800df3edc20fba1778964e40fcbf68777f8666b257c9b4d8c16628b91bbe729bba9d7e1ec1264bcc54972f659f44c25ee7bc9e68283982d6dd677c9f97b4442d798e8bdb66f59e874bdc0cb13e9c351db203533f4b004e56c01c6de76ccd08cd9abb6899d7a4fb6656db4a0ab1c4c66b8f63af508161a06e4bf8cf6e1dbe70d49bb49a20b0975055c2fe050d2253efaab5030cb6aaa877e530eda08a29a667d7c8fc153c550a5c61fbadff57a756fa9742c45fcea1a7f2fa50d62214c45357e7fbb3f4aeef9d8f82c85f50d9b99933094c2b6dfba4adb97025d82e5047131815289fc2c1bf30954b6cb11901c254cb55dad6a3385593a9394eead18f0013721444ed105e39559777cbb9b8b0bc2713624bbd53dd7c4bd51f277c0d6af01c5a63f5d07124c079cb6fb3150c747976b1a0dfeed9c0881dbb3c7310cd92a67f803a27771d19f8c63af951f4799382de032c52e9ee5f52c424635557c62df8c73fa4e24821dfa8f8f2ef1d68dc63848405f1f8a3973a0e82e8747cd7152f00618bfb016320d54436cea61a2461afe28ce5ca18cd74fe75e53091824eaff2bc66f23e62eb6e8c71cd2a41885609166c658f7787920b3bb740ab7b0a763b85b8d5b54dfb79d87f5963b593bf9f08da444dfc61c23b472f83f1feb3f20ad7b2d76ee6a6069b916a6fa1ecb545875e136b49b7adf82615757f99fdee2c0bdad63eb3dde3c4f157f48dac286e29259cffe1c969699473da6f82792c01ef9812b8f40df39254761fbbaafb893a686c4237f0bc454d01820d54203332a70ac0f6a2b754eefccf6a6f97d26ab61376f99715e2bba3d6d7eb8a786db4de0dbcafcfeef2aa105ed4ba0c1688f4a32956421abf20bba39a4bfd64c4e947c274b4ea93696c5a4bfdba0adb830f14b1806b42149856c8ef17d41eb3210b5d578747fecb1d37e570026598af4806a97b408ebe0660c62729e629376621180d30d5f27ad09f3ffbd07ad86c4551a2d1586ed21ce8bfb4ac7fdc946603ff87cebaca8e08a416523fca65779f3001b5f56b87c6b661a5c2724fce1af769b1984d07f51c1e08397908aacc5829bf8c3e50f2abb5098c39dfbd213a2d78bbbb909ab6caa837ef891162eef85d9094ad65c281e63c5055fa9382a348f9d96e09cbfc5411a36a0b5d9a14aae2410b8124642ff7bd8ee718b83fad444d48a48d7748935cd84361e7bdb9e9a3b41c37ce6f65e4a8a51f560a004880c344f5fc9edf9686c30930791351e735e976cf61d6771872d399bb9af3ff72cda084c5b5c21af0bc512b80dae27de391e0dfd9f04ce05b71efae7c1c303bdb6c237d159f03f2653dbdaae64dcfe7e80cfecf16550d5520ae9404982baff3805da7ff0f12f77cf784ae3f6b25f95ef7e1dbb5e3aac46af0b787fa8adfa197832118ac8b281838b54734663266227ef4dda4d99cd849262597f6a5eb6702a5275c9874d3695bf301530f0caad42e696eab572d984f13a9a77c7ec931250b7eed50b54d15ad88ebf177c8015a429e1c4bf3b9bb6c78aab553429f10502f42f2881b7a0b0d8631751653c28f49dfcbf7af1e5e25e1d8ade7a1ae36770a81ad772ed00bdbb8c095fe14c09040cd38fa0b4c053cc649a3d36a9849e24b34e32123cf3cc866032d4f9240bc75c55b47b8e4b4cbdb313cb2c7c18d3a170b036bda7983bf2b0a99d96ae54281c7e6462e69c0cd5c7f4a5b05b7d0dd9361b7ede477db89cf363de7c621ff5e5ad849ee9a08384fb6e1c4cd185eb0a0e64f35ffeac4ce4e939b32dc7fe9cf2d5a140f995823cf60e9736ac886624825c92855454e0cdb140e0305bfd46b85b8b09d020909e86b3f900e6cb2cac3787efd15e623b0632fa5c7543e9687abe934121b23aa975a9e6431513062f9da99f7e5992ce2c6cfb0980dd1b4805a1a23c8fce882ac41702ff8cd5202809da4c9d33d8da0c23b9453d8b2709e669ef5d892d993c6830df652b90fcab6c4f72fe2a108657f4569922ac991b8a4990b8cd9bc9f6d0638d24915310c3ed512e58a9ae8e8ac31c286f5dedcb106ff3e4b928ad1d19499146cebdd79767dc374bf43099f530da93423735db11d01e3e34dab4f1e9c8891eca62103d024607972be586ffa26d371ef0c2f75b220ce5e327554ec7a7e95e435d21e3e2cd29e9600149d8f04aefc3dbd7563071966a061f34d047894bb43e8f32bd6f4622da60dedff40c71bda2073becf565c6cc566f95473a344064641f689fa1402965fef031e6cea869f86cbab9bccb12cd4ca4e447db00ff98337c0f293d2152994d0fa5fa20386083c1d10a2971e61d6db8b6fd2f5c762d36ddf23b5b0cef15e87e497b9d0fb1cf3342d9ddfc34fbcae1fe3ca06f62fa88c76d7b1f62f8b11655a9ff9173cb3a23f9b8009caab902b762f7630987e7f0834016339c1f21432cc2ccbaf6cf9689c385ad5d54555376cfb0377b37a4ff2738732252f3511670e8292112d0f035bc779ed32337caf2e3fb5deb9057056c9b1e3efb229e2830b318f1e6f570af4b1e1d3e3fa13e3dabc85c8eb7df0a2ad195ee183fa7d0b246c466a68b1c66fbc0019c78dba0ca7762c1d906db36a2d59f8400e6ad7e20e0eeba7d38b5accf0243b73f0c3acb04d07796d82ff5b0341282e1ea97c51f04535f756d3997bb5261141c583f36bfccafd8a79f575e964b2ebcfd84123b44cadc11855c63a05c74885149afc83c225d6374e03b27ae3da1a9e4734f33cd03a</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -287,8 +253,7 @@ IEEE Communications Magazine, vol. 52, no. 12, pp. 122-131, December
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/communication/" rel="tag"># communication</a>
-              <a href="/tags/mmwave/" rel="tag"># mmwave</a>
+              <a href="/tags/Communication/" rel="tag"># Communication</a>
           </div>
 
         
@@ -301,8 +266,8 @@ IEEE Communications Magazine, vol. 52, no. 12, pp. 122-131, December
       <i class="fa fa-chevron-left"></i> Compressed Sensing
     </a></div>
       <div class="post-nav-item">
-    <a href="/2019/08/26/DBindex/" rel="next" title="数据库索引">
-      数据库索引 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/08/26/DBindex/" rel="next" title="Database Index">
+      Database Index <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -362,7 +327,6 @@ IEEE Communications Magazine, vol. 52, no. 12, pp. 122-131, December
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#beamforming%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">beamforming作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8E%E9%A2%91%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">低频段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%AB%E7%B1%B3%E6%B3%A2%E9%A2%91%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">毫米波频段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E9%A2%84%E7%BC%96%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">混合预编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bit-adc"><span class="nav-number">3.2.</span> <span class="nav-text">1 bit ADC</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -383,13 +347,13 @@ IEEE Communications Magazine, vol. 52, no. 12, pp. 122-131, December
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

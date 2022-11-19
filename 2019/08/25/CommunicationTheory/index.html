@@ -20,18 +20,17 @@
     var CONFIG = {"hostname":"ybzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="记录一些容易混淆的通信概念。">
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些通信概念">
+<meta property="og:title" content="Basic Communication Concepts">
 <meta property="og:url" content="https://ybzzz.github.io/2019/08/25/CommunicationTheory/index.html">
 <meta property="og:site_name" content="Bin&#39;s Blog">
-<meta property="og:description" content="记录一些容易混淆的通信概念。">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-08-25T02:55:46.000Z">
-<meta property="article:modified_time" content="2022-03-13T15:34:09.672Z">
+<meta property="article:modified_time" content="2022-11-19T07:10:57.472Z">
 <meta property="article:author" content="Yang Bin">
-<meta property="article:tag" content="communication">
-<meta property="article:tag" content="spectrum">
+<meta property="article:tag" content="Communication">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://ybzzz.github.io/2019/08/25/CommunicationTheory/">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>一些通信概念 | Bin's Blog</title>
+  <title>Basic Communication Concepts | Bin's Blog</title>
   
 
 
@@ -126,12 +125,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">6</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -190,7 +189,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一些通信概念
+          Basic Communication Concepts
         </h1>
 
         <div class="post-meta">
@@ -207,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-13 23:34:09" itemprop="dateModified" datetime="2022-03-13T23:34:09+08:00">2022-03-13</time>
+                <time title="Modified: 2022-11-19 15:10:57" itemprop="dateModified" datetime="2022-11-19T15:10:57+08:00">2022-11-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,7 +214,11 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/communication/" itemprop="url" rel="index"><span itemprop="name">communication</span></a>
+                  <a href="/categories/Archived/" itemprop="url" rel="index"><span itemprop="name">Archived</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Archived/Communication/" itemprop="url" rel="index"><span itemprop="name">Communication</span></a>
                 </span>
             </span>
 
@@ -230,19 +233,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>记录一些容易混淆的通信概念。 <span id="more"></span></p>
-<h3 id="频谱泄漏">频谱泄漏</h3>
-<ul>
-<li>对于无限长序列，截断其中一部分信号，即时域加窗，频域卷积，使得频谱中出现了不该有的旁瓣，即频谱泄漏。</li>
-<li>上述情况总结为：分析结果与实际不一致。</li>
-</ul>
-<p>对于截断信号的分析，傅里叶变换将信号周期延拓，然后进行变换。</p>
-<p>对于非周期无限长序列，截断必然与实际不一致；对于无限长周期序列，非整周期截断使得延拓后信号与原始不一致，也会造成泄漏。</p>
-<p>泄漏的表现形式：
-对非整周期截断，周期延拓时两个周期相邻处出现突变，则会引入高次谐波；
-因此使用合适的窗函数使得截断更为圆滑，可以抑制高次谐波。</p>
-<h3 id="section"></h3>
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="c65b6a7db9317df12dad6bcc64899d08c56a325b34c826b1c5e110bd0b28f872">fded4d905b88d4d49da60b6b1a1cdaa49bef6589f4b176d775e099be906120733a06bd8e30d405d94057edbc49f2ad3f22d95e7751b2d8addd6f883e62defa40ddcc699a543437c190044e614a63a933266fcb0ef75e3d98bb70dd29c7fe01ded54519473acbc459e427c990a9a0cfcaaa3a290ad0ca2d8a2e06564852926c078dfbd1af37580b68e6a69de3a3c77c20154e880c64361b68609e9a4c736fc704e8febd1846551c7d28a9958cad1aa15b3743f9da9a16a5eef1c7ca361843327e4eeb5828faf53f0879f07cff8046a44390411ed2e0651a8e66c60ad2f6716c74250eb3c265d724002dddbd6ba843d0b11428d603cb2473d5a54a147ef7dd0f1e399c601005539d687bb940f29ba091ac005dc1d5179a98107a014090505dca97e776783f23a9728df5cf40f2e83f5abba62cc2838dd931b57e8a9f3d9becb8785dad7a098f90e41f78aec844c4426608f3d0075fe50a109251031028fb62e4177add9685668ef6a6f078dbe26b710ce308913e9e5bdd70ef792e1b2bb109f47933d0c338b36319f6371c87556b52dd0ecd2bda92ac0f31b2c70a7c7fd883a084b8594d94e92c4c2afbc1fe2986b78b767c06a4186dd2b1c9f8438dc7446f9dcd222dc9712e1063e6c967c506e3add14c21527e03f94316dd8e235ef00c87ad9c1f0869057513b90e512446fbeaf4e0fbf3827df3b7f82a632ad46d83557d66731bc48a45318ad5b9dcbd201bffa114b748d30a4190afe5ef7b1353f45e8c6587ebec464026b6b701884fe1ab995d2e15c037d8c5578aee1e7ce594d22fa04e6655a7735347681584f10ed4e7151f4b4216d40c90f89d694e4fb46b6322c53275bfafe3831911e2b8a068cd75251f7772dcac60d73c27578e51af68d5e33304c4a83c5be2fa563c8a33d4e56a85b4b45d6172eaea936e54ca7d79c1933ed39cc1403200552bc527435a870aae0a76db685ca2e9e2271f2612b6aab14a29044023852338bff1c40dead1fbdcf21132b159012d35381c806973b5b502d379a7dddd77faa996060cdf69fb2765ef5a3034ca7efcf20d9484c1872580742e730e3759ad185d756611cd486eb7a668236739be7beb299e19f6a0bc5ab5f541c36ec39b4b66fa72cb1e79e6a67933c0024056675e162ebf8aef08d0091ce4759a9bd6c1761f0f8fd80cb56416caebc6ac2fe0a7ca174ac3a554e888fe5829f28485fcc578fe91fc46ee542d867562110eb3860376d9c0bdc7e39b849a1c662e2abc4a084152d4130d6e82adcaae2dd4beecad96</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -251,8 +253,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/communication/" rel="tag"># communication</a>
-              <a href="/tags/spectrum/" rel="tag"># spectrum</a>
+              <a href="/tags/Communication/" rel="tag"># Communication</a>
           </div>
 
         
@@ -326,7 +327,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%91%E8%B0%B1%E6%B3%84%E6%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">频谱泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -347,13 +347,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
