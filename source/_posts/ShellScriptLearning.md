@@ -1,5 +1,5 @@
 ---
-title: shell脚本学习记录
+title: Shell Script Learning
 date: 2019-08-03 22:51:53
 categories:
 - Software Development
@@ -20,7 +20,7 @@ tags:
 	who
 ```
 以上为一个简单脚本，此时需要添加执行的权限`chmod u+x test`，然后可以运行`./test`，得到结果：
-![easyshell](Shell/firstshell.PNG)
+![easyshell](ShellScriptLearning/firstshell.PNG)
 
 ### 基本规则、语法
 + 首行`#!/bin/bash`声明用的shell；
@@ -37,6 +37,6 @@ tags:
 + 也可使用方括号进行数学运算`var4=$[$var3 * ($var2 - $var1)]`，这种方式不需要转义符号。（这两种都只支持整数运算）；
 + 用内置计算器bc进行计算，`scale=4`设置小数位数；
 + 用bc进行复杂计算，可以使用内联重定向进行多行运算，以下是上述几个方式示例：
-![几个运算方法示例](Shell/bc.PNG)
+![几个运算方法示例](ShellScriptLearning/bc.PNG)
 
 + 使用`echo $?`查看shell所执行的最后一条命令的退出状态码，范围0~255；
