@@ -135,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -237,15 +237,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Linux系统出现网络问题的解决方法记录。<br><span id="more"></span></p>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>可以对网络服务进行重启。</p>
-<ul>
-<li>停止： <code>sudo service network-manager stop</code></li>
-<li>备份（可选）：<code>sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak</code></li>
-<li>删除当前状态：<code>sudo rm /var/lib/NetworkManager/NetworkManger.state</code></li>
-<li>重启：<code>suao service network-manager start</code></li>
-</ul>
-<h3 id="CentOs"><a href="#CentOs" class="headerlink" title="CentOs"></a>CentOs</h3>
+        <p>Linux系统出现网络问题的解决方法记录。 <span id="more"></span></p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p>可以对网络服务进行重启。 + 停止：
+<code>sudo service network-manager stop</code> +
+备份（可选）：<code>sudo cp /var/lib/NetworkManager/NetworkManger.state /var/lib/NetworkManager/NetworkManager.state.bak</code>
++
+删除当前状态：<code>sudo rm /var/lib/NetworkManager/NetworkManger.state</code>
++ 重启：<code>suao service network-manager start</code></p>
+<h3 id="centos">CentOs</h3>
+
     </div>
 
     
@@ -328,7 +329,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOs"><span class="nav-number">2.</span> <span class="nav-text">CentOs</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#centos"><span class="nav-number">2.</span> <span class="nav-text">CentOs</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -342,7 +343,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

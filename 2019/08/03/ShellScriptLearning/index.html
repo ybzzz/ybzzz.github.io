@@ -135,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -237,28 +237,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>学习shell脚本编程。<br><span id="more"></span></p>
-<h3 id="基本脚本"><a href="#基本脚本" class="headerlink" title="基本脚本"></a>基本脚本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">date</span><br><span class="line">who</span><br></pre></td></tr></table></figure>
-<p>以上为一个简单脚本，此时需要添加执行的权限<code>chmod u+x test</code>，然后可以运行<code>./test</code>，得到结果：<br></p>
-<h3 id="基本规则、语法"><a href="#基本规则、语法" class="headerlink" title="基本规则、语法"></a>基本规则、语法</h3><ul>
-<li>首行<code>#!/bin/bash</code>声明用的shell；</li>
-<li>除首行外，使用#注释；</li>
-<li>echo命令打印文本，注意引号；</li>
-<li>$加环境变量来使用这些变量（set显示当前环境变量列表）；</li>
-<li>想显示$符号，加上\；</li>
-<li>等号赋值=号左右不得有空格；</li>
-<li>将命令输出赋予变量，可使用<code>testing= `date` </code>（该处是反引号）或者<code>testing=$(date)</code>来获取；</li>
-<li>重定向&gt; &lt;;</li>
-<li>管道 | （命令是同时进行，不是依次，中间没有缓冲区，直接将运行数据给另一个命令）；</li>
-<li>使用<code>expr arg1 + arg2</code>类似进行数学运算，在命令行中对有些符号要加上转义字符\才能工作；</li>
-<li>在shell脚本中，如<code>var3=$(expr $var2 / $var2)</code>来进行运算；</li>
-<li>也可使用方括号进行数学运算<code>var4=$[$var3 * ($var2 - $var1)]</code>，这种方式不需要转义符号。（这两种都只支持整数运算）；</li>
-<li>用内置计算器bc进行计算，<code>scale=4</code>设置小数位数；</li>
-<li><p>用bc进行复杂计算，可以使用内联重定向进行多行运算，以下是上述几个方式示例：</p>
-
-</li>
-<li><p>使用<code>echo $?</code>查看shell所执行的最后一条命令的退出状态码，范围0~255；</p>
-</li>
+        <p>学习shell脚本编程。 <span id="more"></span></p>
+<h3 id="基本脚本">基本脚本</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">date</span><br><span class="line">who</span><br></pre></td></tr></table></figure>
+<p>以上为一个简单脚本，此时需要添加执行的权限<code>chmod u+x test</code>，然后可以运行<code>./test</code>，得到结果：
+</p>
+<h3 id="基本规则语法">基本规则、语法</h3>
+<ul>
+<li><p>首行<code>#!/bin/bash</code>声明用的shell；</p></li>
+<li><p>除首行外，使用#注释；</p></li>
+<li><p>echo命令打印文本，注意引号；</p></li>
+<li><p>$加环境变量来使用这些变量（set显示当前环境变量列表）；</p></li>
+<li><p>想显示$符号，加上；</p></li>
+<li><p>等号赋值=号左右不得有空格；</p></li>
+<li><p>将命令输出赋予变量，可使用<code>testing= `date`</code>（该处是反引号）或者<code>testing=$(date)</code>来获取；</p></li>
+<li><p>重定向&gt; &lt;;</p></li>
+<li><p>管道 |
+（命令是同时进行，不是依次，中间没有缓冲区，直接将运行数据给另一个命令）；</p></li>
+<li><p>使用<code>expr arg1 + arg2</code>类似进行数学运算，在命令行中对有些符号要加上转义字符；</p></li>
+<li><p>在shell脚本中，如<code>var3=$(expr $var2 / $var2)</code>来进行运算；</p></li>
+<li><p>也可使用方括号进行数学运算<code>var4=$[$var3 * ($var2 - $var1)]</code>，这种方式不需要转义符号。（这两种都只支持整数运算）；</p></li>
+<li><p>用内置计算器bc进行计算，<code>scale=4</code>设置小数位数；</p></li>
+<li><p>用bc进行复杂计算，可以使用内联重定向进行多行运算，以下是上述几个方式示例：
+</p></li>
+<li><p>使用<code>echo $?</code>查看shell所执行的最后一条命令的退出状态码，范围0~255；</p></li>
 </ul>
 
     </div>
@@ -340,7 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%84%9A%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">基本脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99%E3%80%81%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本规则、语法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%84%9A%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">基本脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本规则、语法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -354,7 +356,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

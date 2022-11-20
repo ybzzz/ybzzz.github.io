@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -167,6 +167,86 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-CN,default">
+    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2022/11/20/SelectVsPollVsEpoll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yang Bin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bin's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/20/SelectVsPollVsEpoll/" class="post-title-link" itemprop="url">Select v.s. Poll v.s. Epoll</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-11-20 15:36:32 / Modified: 15:44:08" itemprop="dateCreated datePublished" datetime="2022-11-20T15:36:32+08:00">2022-11-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Operating-System/" itemprop="url" rel="index"><span itemprop="name">Operating System</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Software-Development/Operating-System/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Describe how select/poll/epoll work and the difference.</p>
+<p>&lt;!-- more -- &gt;</p>
+<blockquote>
+<p>https://hechao.li/2022/01/04/select-vs-poll-vs-epoll/</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -322,16 +402,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>虚基类继承的时候出现error：<code>undefined reference to &#39;vtable for xxx&#39;</code> 以及 <code>undefined reference to &#39;typeinfo for xxx&#39;</code></p>
-<p>解决方法：</p>
-<ol>
-<li>对于纯虚函数需要加上函数体 <code>&#123;&#125;</code>，即 <code>virtual void example();</code> 要改为 <code>virtual void example() &#123;&#125;</code></li>
-<li>含有虚函数的类的析构函数要声明为virtual。</li>
-</ol>
-<p>为什么要加函数体？</p>
-<blockquote>
-<p>暂时不明</p>
-</blockquote>
+          <p>虚基类继承的时候出现error：<code>undefined reference to 'vtable for xxx'</code>
+以及 <code>undefined reference to 'typeinfo for xxx'</code></p>
+<p>解决方法： 1. 对于纯虚函数需要加上函数体 <code>&#123;&#125;</code>，即
+<code>virtual void example();</code> 要改为
+<code>virtual void example() &#123;&#125;</code> 2.
+含有虚函数的类的析构函数要声明为virtual。</p>
+<p>为什么要加函数体？ &gt;暂时不明</p>
 
       
     </div>
@@ -409,7 +486,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>MySql索引相关内容。<br>
+          <p>MySql索引相关内容。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/26/DatabaseIndex/#more" rel="contents">
@@ -745,7 +822,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>学习vimtutor记录。<br>
+          <p>学习vimtutor记录。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/09/VimLearn/#more" rel="contents">
@@ -834,7 +911,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>学习shell脚本编程。<br>
+          <p>学习shell脚本编程。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/03/ShellScriptLearning/#more" rel="contents">
@@ -923,99 +1000,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>linux下几个调试工具及其使用。<br>
+          <p>linux下几个调试工具及其使用。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/03/CppDebug/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-CN,default">
-    <link itemprop="mainEntityOfPage" href="https://ybzzz.github.io/2019/08/03/CppMakefile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yang Bin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bin's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/03/CppMakefile/" class="post-title-link" itemprop="url">CppMakefile</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-03 19:39:06" itemprop="dateCreated datePublished" datetime="2019-08-03T19:39:06+08:00">2019-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-19 16:26:00" itemprop="dateModified" datetime="2022-11-19T16:26:00+08:00">2022-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/" itemprop="url" rel="index"><span itemprop="name">Software Development</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Programming-Language/" itemprop="url" rel="index"><span itemprop="name">Programming Language</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Software-Development/Programming-Language/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>linux下c++编程，makefile编写方式。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/03/CppMakefile/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1104,7 +1092,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
