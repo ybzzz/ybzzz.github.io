@@ -203,4 +203,4 @@ while (1) {
 
 ## Reference
 >https://hechao.li/2022/01/04/select-vs-poll-vs-epoll/
-
+https://eklitzke.org/blocking-io-nonblocking-io-and-epoll
